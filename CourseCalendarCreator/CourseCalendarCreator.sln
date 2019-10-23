@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseCalendarCreator", "CourseCalendarCreator\CourseCalendarCreator.csproj", "{726EADD8-6481-42C9-96FE-339C0AE8C474}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{726EADD8-6481-42C9-96FE-339C0AE8C474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726EADD8-6481-42C9-96FE-339C0AE8C474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726EADD8-6481-42C9-96FE-339C0AE8C474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726EADD8-6481-42C9-96FE-339C0AE8C474}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F551A6F-DF75-4377-997C-78D6B9DD298D}
+	EndGlobalSection
+EndGlobal
