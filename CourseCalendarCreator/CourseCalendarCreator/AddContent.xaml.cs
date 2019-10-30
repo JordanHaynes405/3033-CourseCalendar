@@ -16,16 +16,16 @@ using System.Windows.Shapes;
 namespace CourseCalendarCreator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddContent.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddContent : Page
     {
-        public MainWindow()
+        public AddContent()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
