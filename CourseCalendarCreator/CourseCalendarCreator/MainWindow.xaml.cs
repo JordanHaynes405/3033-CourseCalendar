@@ -27,7 +27,7 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Source = new Uri("AddContent.xaml", UriKind.Relative);
         }
     }
 }
