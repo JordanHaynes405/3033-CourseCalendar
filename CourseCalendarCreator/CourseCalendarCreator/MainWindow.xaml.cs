@@ -64,12 +64,20 @@ namespace CourseCalendarCreator
         private void btnApplyFrame_Click(object sender, RoutedEventArgs e)
         {
             ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
+            ///https://www.e-iceblue.com/Tutorials/Spire.XLS/Spire.XLS-Program-Guide/Header-and-Footer/Insert-Header-and-Footer-to-Excel-with-C-VB.NET-in-WPF.html
 
             DataGrid dgvPreview = new DataGrid();
 
             System.Data.DataTable BuildTable = new System.Data.DataTable();
 
-            BuildTable.Columns.Add.
+            BuildTable.Columns.Add();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            //https://social.msdn.microsoft.com/Forums/en-US/ea4cf092-6cd0-46a4-b889-0cb85c6501a8/delete-selected-row-from-datagrid-table-in-wpf?forum=wpf
+            DataRowView row = (DataRowView)gridPosts.SelectedItem;
+            dt.Rows.Remove(row.Row);
         }
     }
 }

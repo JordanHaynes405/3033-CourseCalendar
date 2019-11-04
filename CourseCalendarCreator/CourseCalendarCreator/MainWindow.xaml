@@ -11,7 +11,7 @@
         <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="672,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif"/>
         <DatePicker x:Name="dprStart" HorizontalAlignment="Left" Margin="546,324,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Button x:Name="btnAdd" Content="Add Topic" HorizontalAlignment="Left" Height="22" Margin="32,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
-        <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="22" Margin="214,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
+        <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="22" Margin="214,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnDelete_Click"/>
         <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="22" Margin="386,374,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif" Click="btnExport_Click"/>
         <TextBox x:Name="txtCourseName" HorizontalAlignment="Left" Height="24" Margin="546,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtProfessor" HorizontalAlignment="Left" Height="22" Margin="546,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseCalendarCreator"
         mc:Ignorable="d"
-        Title="AddContent" Height="315" Width="405.5">
-    <Grid Background="#FFC7AFAF" Margin="0,0,2,-3" HorizontalAlignment="Right" Width="396">
-        <TextBox x:Name="txtTopicName" HorizontalAlignment="Left" Height="24" Margin="57,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
-        <TextBox x:Name="txtNumTopicPeriods" HorizontalAlignment="Left" Height="24" Margin="57,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
-        <TextBox x:Name="txtTopicPreparation" HorizontalAlignment="Left" Height="24" Margin="57,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="24" Margin="163,242,0,0" VerticalAlignment="Top" Width="80" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
-        <Label Content="Add Topic" HorizontalAlignment="Left" Height="32" Margin="130,10,0,0" VerticalAlignment="Top" Width="113" FontFamily="Microsoft Sans Serif" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="lblTopicName" Content="Topic Name" HorizontalAlignment="Left" Margin="57,50,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
-        <Label x:Name="lblNumTopicPeriods" Content="Topic Periods to Cover (ex. 3)" HorizontalAlignment="Left" Margin="57,105,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
-        <Label x:Name="lblTopicPreparation" Content="Preparation (ex. read chapter 2)" HorizontalAlignment="Left" Margin="57,163,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        Title="AddContent" Height="292.5" Width="381.5">
+    <Grid Background="#FFC7AFAF" Margin="0,0,-1,0" HorizontalAlignment="Right" Width="369">
+        <TextBox x:Name="txtTopicName" HorizontalAlignment="Left" Height="24" Margin="66,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
+        <TextBox x:Name="txtNumTopicPeriods" HorizontalAlignment="Left" Height="24" Margin="66,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
+        <TextBox x:Name="txtTopicPreparation" HorizontalAlignment="Left" Height="24" Margin="66,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="24" Margin="151,218,0,0" VerticalAlignment="Top" Width="80" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
+        <Label Content="Add Topic" HorizontalAlignment="Left" Height="36" Margin="130,10,0,0" VerticalAlignment="Top" Width="113" FontFamily="Microsoft Sans Serif" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblTopicName" Content="Topic Name" HorizontalAlignment="Left" Margin="66,40,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        <Label x:Name="lblNumTopicPeriods" Content="Topic Periods to Cover (ex. 3)" HorizontalAlignment="Left" Margin="66,94,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        <Label x:Name="lblTopicPreparation" Content="Preparation (ex. read chapter 2)" HorizontalAlignment="Left" Margin="66,152,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
 
     </Grid>
 </Window>
