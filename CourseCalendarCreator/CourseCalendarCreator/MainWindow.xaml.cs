@@ -65,7 +65,11 @@ namespace CourseCalendarCreator
         {
             ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
 
+            DataGrid dgvPreview = new DataGrid();
 
+            System.Data.DataTable BuildTable = new System.Data.DataTable();
+
+            BuildTable.Columns.Add.
         }
     }
 }
