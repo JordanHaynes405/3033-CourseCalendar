@@ -27,6 +27,7 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            //Change Add page to WPF window
             this.Source = new Uri("AddContent.xaml", UriKind.Relative);
         }
 
@@ -41,6 +42,18 @@ namespace CourseCalendarCreator
                 MessageBox.Show("Excel is not properly installed!!");
                 return;
             }
+
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            xlWorkSheet.Cells[1, 1] = "ID";
+            xlWorkSheet.Cells[1, 2] = "Name";
+            xlWorkSheet.Cells[2, 1] = "1";
+            xlWorkSheet.Cells[2, 2] = "One";
+            xlWorkSheet.Cells[3, 1] = "2";
+            xlWorkSheet.Cells[3, 2] = "Two";
+
+            xlWorkBook.SaveAs("your-file-name.xls");
         }
     }
 }
