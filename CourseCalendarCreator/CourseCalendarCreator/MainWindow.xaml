@@ -10,11 +10,10 @@
         <Label Content="Course Calendar Creator" HorizontalAlignment="Left" Height="36" Margin="272,10,0,0" VerticalAlignment="Top" Width="299" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.498,0.459" FontFamily="Microsoft Sans Serif"/>
         <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="680,292,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif"/>
         <DatePicker x:Name="dprStart" HorizontalAlignment="Left" Margin="554,292,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
-        <ListBox HorizontalAlignment="Left" Height="267" Margin="35,71,0,0" VerticalAlignment="Top" Width="464" FontFamily="Microsoft Sans Serif"/>
         <Button x:Name="btnAdd" Content="Add Topic" HorizontalAlignment="Left" Height="21" Margin="35,355,0,0" VerticalAlignment="Top" Width="101" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
-        <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="21" Margin="214,355,0,0" VerticalAlignment="Top" Width="101" FontFamily="Microsoft Sans Serif"/>
-        <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="21" Margin="398,355,0,0" VerticalAlignment="Top" Width="101" FontFamily="Microsoft Sans Serif" Click="btnExport_Click"/>
-        <TextBox x:Name="txtCourse" HorizontalAlignment="Left" Height="23" Margin="554,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
+        <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="21" Margin="212,355,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
+        <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="22" Margin="398,356,0,0" VerticalAlignment="Top" Width="101" FontFamily="Microsoft Sans Serif" Click="btnExport_Click"/>
+        <TextBox x:Name="txtCourseName" HorizontalAlignment="Left" Height="23" Margin="554,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtProfessor" HorizontalAlignment="Left" Height="23" Margin="554,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtSemester" HorizontalAlignment="Left" Height="23" Margin="554,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <Label x:Name="lblCourseName" Content="Course Name &#xD;&#xA;(ex. Non-Procedural Programming)" HorizontalAlignment="Left" Height="44" Margin="554,43,0,0" VerticalAlignment="Top" Width="204" FontFamily="Microsoft Sans Serif"/>
@@ -24,5 +23,7 @@
         <Label Content="Semester/Term (ex. Fall 2019)" HorizontalAlignment="Left" Height="25" Margin="556,212,0,0" VerticalAlignment="Top" Width="186" FontFamily="Microsoft Sans Serif"/>
         <Label Content="Start Date" HorizontalAlignment="Left" Height="27" Margin="556,265,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
         <Label Content="End Date" HorizontalAlignment="Left" Height="27" Margin="680,265,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
+        <Button x:Name="btnApplyFrame" Content="Begin" HorizontalAlignment="Left" Height="21" Margin="605,355,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnApplyFrame_Click"/>
+        <DataGrid HorizontalAlignment="Left" Height="260" Margin="39,56,0,0" VerticalAlignment="Top" Width="459"/>
     </Grid>
 </Window>

@@ -34,7 +34,9 @@ namespace CourseCalendarCreator
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             ///http://csharp.net-informations.com/excel/csharp-create-excel.htm
-            /*
+
+            
+
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
             if (xlApp == null)
@@ -43,7 +45,10 @@ namespace CourseCalendarCreator
                 return;
             }
 
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Add(misValue);
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
+
+            /*
+            Add(misValue);
 
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
             xlWorkSheet.Cells[1, 1] = "ID";
@@ -54,6 +59,13 @@ namespace CourseCalendarCreator
             xlWorkSheet.Cells[3, 2] = "Two";
 
             xlWorkBook.SaveAs("your-file-name.xls");*/
+        }
+
+        private void btnApplyFrame_Click(object sender, RoutedEventArgs e)
+        {
+            ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
+
+
         }
     }
 }
