@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CourseCalendarCreator
@@ -18,16 +17,11 @@ namespace CourseCalendarCreator
     /// <summary>
     /// Interaction logic for AddContent.xaml
     /// </summary>
-    public partial class AddContent : Page
+    public partial class AddContent : Window
     {
         public AddContent()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

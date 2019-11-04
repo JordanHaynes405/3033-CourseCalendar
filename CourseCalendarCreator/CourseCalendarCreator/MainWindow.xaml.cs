@@ -28,13 +28,16 @@ namespace CourseCalendarCreator
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             //Change Add page to WPF window
-            this.Source = new Uri("AddContent.xaml", UriKind.Relative);
+            //this.Source = new Uri("AddContent.xaml", UriKind.Relative);
+
+            //AddContent Topic = new AddContent();
+            //Topic.Show();
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
-            //http://csharp.net-informations.com/excel/csharp-create-excel.htm
-
+            ///http://csharp.net-informations.com/excel/csharp-create-excel.htm
+            /*
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
             if (xlApp == null)
@@ -53,7 +56,7 @@ namespace CourseCalendarCreator
             xlWorkSheet.Cells[3, 1] = "2";
             xlWorkSheet.Cells[3, 2] = "Two";
 
-            xlWorkBook.SaveAs("your-file-name.xls");
+            xlWorkBook.SaveAs("your-file-name.xls");*/
         }
     }
 }
