@@ -26,6 +26,10 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            //txtTopicName;
+            //txtNumTopicPeriods;
+            //txtTopicPreparation;
+
             this.Close();
         }
     }

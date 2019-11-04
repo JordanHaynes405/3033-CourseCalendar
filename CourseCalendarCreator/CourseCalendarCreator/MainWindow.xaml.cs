@@ -27,9 +27,6 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //Change Add page to WPF window
-            //this.Source = new Uri("AddContent.xaml", UriKind.Relative);
-
             AddContent Topic = new AddContent();
             Topic.Show();
         }
