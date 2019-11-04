@@ -32,9 +32,15 @@ namespace CourseCalendarCreator
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
+            //http://csharp.net-informations.com/excel/csharp-create-excel.htm
+
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
-
+            if (xlApp == null)
+            {
+                MessageBox.Show("Excel is not properly installed!!");
+                return;
+            }
         }
     }
 }
