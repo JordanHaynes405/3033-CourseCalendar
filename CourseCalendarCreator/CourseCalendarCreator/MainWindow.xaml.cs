@@ -29,5 +29,12 @@ namespace CourseCalendarCreator
         {
             this.Source = new Uri("AddContent.xaml", UriKind.Relative);
         }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+
+        }
     }
 }
