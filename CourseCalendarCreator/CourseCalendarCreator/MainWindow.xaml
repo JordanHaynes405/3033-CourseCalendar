@@ -23,7 +23,6 @@
         <Label Content="Semester/Term (ex. Fall 2019)" HorizontalAlignment="Left" Height="24" Margin="548,244,0,0" VerticalAlignment="Top" Width="186" FontFamily="Microsoft Sans Serif"/>
         <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="548,296,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
         <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="672,296,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
-        <Button x:Name="btnApplyFrame" Content="Begin" HorizontalAlignment="Left" Height="22" Margin="602,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnApplyFrame_Click"/>
         <DataGrid x:Name="dgvPreview" HorizontalAlignment="Left" Height="260" Margin="32,88,0,0" VerticalAlignment="Top" Width="458"/>
     </Grid>
 </Window>
