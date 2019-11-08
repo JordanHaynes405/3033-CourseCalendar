@@ -27,20 +27,23 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddContent Topic = new AddContent();
-            Topic.Show();
+            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text)
+    && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
+            {
+                MessageBox.Show("Please fill the fields on the page before adding topics");
+            }
+
+            else
+            {
+                AddContent Topic = new AddContent();
+                Topic.Show();
+            }
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text)
-                && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
-            {
-                MessageBox.Show("Please fill the fields on the page before adding topics");
-            }
-            else
-            {
 
+           
                 ///http://csharp.net-informations.com/excel/csharp-create-excel.htm
                 ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
                 ///https://www.e-iceblue.com/Tutorials/Spire.XLS/Spire.XLS-Program-Guide/Header-and-Footer/Insert-Header-and-Footer-to-Excel-with-C-VB.NET-in-WPF.html
@@ -75,7 +78,6 @@ namespace CourseCalendarCreator
                 xlWorkSheet.Cells[3, 2] = "Two";
 
                 xlWorkBook.SaveAs("your-file-name.xls");*/
-            }
         }
 
         private void btnApplyFrame_Click(object sender, RoutedEventArgs e)
