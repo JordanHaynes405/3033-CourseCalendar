@@ -13,7 +13,7 @@
         <Button x:Name="btnAdd" Content="Add Topic" HorizontalAlignment="Left" Height="22" Margin="32,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
         <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="22" Margin="214,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnDelete_Click"/>
         <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="22" Margin="386,374,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif" Click="btnExport_Click"/>
-        <TextBox x:Name="txtCourseName" HorizontalAlignment="Left" Height="24" Margin="546,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
+        <TextBox x:Name="txtCourseName" HorizontalAlignment="Left" Height="24" Margin="546,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif" TextChanged="txtCourseName_TextChanged"/>
         <TextBox x:Name="txtProfessor" HorizontalAlignment="Left" Height="22" Margin="546,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtSemester" HorizontalAlignment="Left" Height="24" Margin="546,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <Label x:Name="lblCourseName" Content="Course Name &#xD;&#xA;(ex. Non-Procedural Programming)" HorizontalAlignment="Left" Height="44" Margin="546,74,0,0" VerticalAlignment="Top" Width="204" FontFamily="Microsoft Sans Serif"/>
