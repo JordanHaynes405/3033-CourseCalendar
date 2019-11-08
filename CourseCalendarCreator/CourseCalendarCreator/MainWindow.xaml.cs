@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CourseCalendarCreator
-{// Worked by: Jordan, Karan, 
+{// Worked by: Jordan, Karan, bob
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
