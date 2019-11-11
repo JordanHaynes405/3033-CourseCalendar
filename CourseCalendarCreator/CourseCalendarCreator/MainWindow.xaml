@@ -25,5 +25,6 @@
         <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="678,345,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
         <DataGrid x:Name="dgvPreview" HorizontalAlignment="Left" Height="260" Margin="32,88,0,0" VerticalAlignment="Top" Width="458"/>
         <TextBox x:Name="txtSemester_Copy" HorizontalAlignment="Left" Height="24" Margin="546,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="Days of the Week (M,Tu,W,Th,F,Sa,Su)" HorizontalAlignment="Left" Height="22" Margin="548,296,0,0" VerticalAlignment="Top" Width="236" FontFamily="Microsoft Sans Serif"/>
     </Grid>
 </Window>
