@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseCalendarCreator"
         mc:Ignorable="d"
-        Title="AddContent" Height="292.5" Width="381.5">
-    <Grid Background="#FFC7AFAF" Margin="0,0,-1,0" HorizontalAlignment="Right" Width="369">
+        Title="AddContent" Height="292.5" Width="549.5">
+    <Grid Background="#FFC7AFAF" HorizontalAlignment="Right" Width="542">
         <TextBox x:Name="txtTopicName" HorizontalAlignment="Left" Height="24" Margin="66,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtNumTopicPeriods" HorizontalAlignment="Left" Height="24" Margin="66,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtTopicPreparation" HorizontalAlignment="Left" Height="24" Margin="66,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" FontFamily="Microsoft Sans Serif"/>
@@ -15,6 +15,7 @@
         <Label x:Name="lblTopicName" Content="Topic Name" HorizontalAlignment="Left" Margin="66,40,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Label x:Name="lblNumTopicPeriods" Content="Topic Periods to Cover (ex. 3)" HorizontalAlignment="Left" Margin="66,94,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Label x:Name="lblTopicPreparation" Content="Preparation (ex. read chapter 2)" HorizontalAlignment="Left" Margin="66,152,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="For Holidays and exceptions,&#xD;&#xA; add them into the topic &#xD;&#xA;name, specifiy date, and add&#xD;&#xA; homework for preparations" HorizontalAlignment="Left" Margin="341,70,0,0" VerticalAlignment="Top" Height="148" Width="165"/>
 
     </Grid>
 </Window>

@@ -35,14 +35,17 @@ namespace CourseCalendarCreator
             AddContent ValuesToTable = new AddContent();
 
             System.Data.DataTable CourseTable = new System.Data.DataTable();
-            CourseTable.Columns.Add("Date");
+
+            CourseTable.Rows.Add();
+            CourseTable.Rows.Add();
+            CourseTable.Rows.Add();
+            CourseTable.Rows.Add();
+            //CourseTable.Columns.Add("Date");
             CourseTable.Columns.Add("Topic Name");
             CourseTable.Columns.Add("Periods");
             CourseTable.Columns.Add("Preparation");
 
-            CourseTable.Rows.Add(ValuesToTable.txtTopicName.Text);
-            CourseTable.Rows.Add(ValuesToTable.txtNumTopicPeriods.Text);
-            CourseTable.Rows.Add(ValuesToTable.txtTopicPreparation.Text);
+            CourseTable.Rows.Add(ValuesToTable.txtTopicName.Text , ValuesToTable.txtNumTopicPeriods.Text, ValuesToTable.txtTopicPreparation.Text);
 
             DataGrid dgvPreview = new DataGrid();
 
