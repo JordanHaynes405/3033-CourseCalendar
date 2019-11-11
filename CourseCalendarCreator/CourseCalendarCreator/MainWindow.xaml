@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.31,0.513" Background="#FF9B8E8E">
         <Label Content="Course Calendar Creator" HorizontalAlignment="Left" Height="36" Margin="272,10,0,0" VerticalAlignment="Top" Width="299" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.498,0.459" FontFamily="Microsoft Sans Serif"/>
-        <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="672,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif"/>
-        <DatePicker x:Name="dprStart" HorizontalAlignment="Left" Margin="546,324,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="672,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif"/>
+        <DatePicker x:Name="dprStart" HorizontalAlignment="Left" Margin="546,363,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Button x:Name="btnAdd" Content="Add Topic" HorizontalAlignment="Left" Height="22" Margin="32,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnAdd_Click"/>
         <Button x:Name="btnDelete" Content="Delete Topic" HorizontalAlignment="Left" Height="22" Margin="214,374,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif" Click="btnDelete_Click"/>
         <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="22" Margin="386,374,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif" Click="btnExport_Click"/>
@@ -21,8 +21,9 @@
         <Label Content="Course Code (ex. MIS 3033)" HorizontalAlignment="Left" Margin="548,140,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtCourseCode" HorizontalAlignment="Left" Height="24" Margin="546,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <Label Content="Semester/Term (ex. Fall 2019)" HorizontalAlignment="Left" Height="24" Margin="548,244,0,0" VerticalAlignment="Top" Width="186" FontFamily="Microsoft Sans Serif"/>
-        <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="548,296,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
-        <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="672,296,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="548,344,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="678,345,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
         <DataGrid x:Name="dgvPreview" HorizontalAlignment="Left" Height="260" Margin="32,88,0,0" VerticalAlignment="Top" Width="458"/>
+        <TextBox x:Name="txtSemester_Copy" HorizontalAlignment="Left" Height="24" Margin="546,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
     </Grid>
 </Window>

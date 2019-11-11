@@ -30,6 +30,23 @@ namespace CourseCalendarCreator
             //txtNumTopicPeriods;
             //txtTopicPreparation;
 
+
+            //Worked with Saurabh
+            AddContent ValuesToTable = new AddContent();
+
+            System.Data.DataTable CourseTable = new System.Data.DataTable();
+            CourseTable.Columns.Add("Date");
+            CourseTable.Columns.Add("Topic Name");
+            CourseTable.Columns.Add("Periods");
+            CourseTable.Columns.Add("Preparation");
+
+            CourseTable.Rows.Add(ValuesToTable.txtTopicName.Text);
+            CourseTable.Rows.Add(ValuesToTable.txtNumTopicPeriods.Text);
+            CourseTable.Rows.Add(ValuesToTable.txtTopicPreparation.Text);
+
+            DataGrid dgvPreview = new DataGrid();
+
+
             this.Close();
         }
     }
