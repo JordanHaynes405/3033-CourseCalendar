@@ -55,9 +55,10 @@ namespace CourseCalendarCreator
 
             DataGrid dgvPreview = new DataGrid();
 
-            dgvPreview.DataContext = CourseTable;
+            //dgvPreview.DataContext = CourseTable.DefaultView;
+            MainPageInput.dgvPreview.ItemsSource = CourseTable.DefaultView;
 
-            //this.Close();
+            this.Close();
         }
     }
 }
