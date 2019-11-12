@@ -39,10 +39,13 @@ namespace CourseCalendarCreator
 
             //With Kwame
 
+            /*
             CourseTable.Rows.Add(MainPageInput.txtCourseName.Text, MainPageInput.txtCourseCode.Text);
             CourseTable.Rows.Add(MainPageInput.txtProfessor);
             CourseTable.Rows.Add(MainPageInput.txtSemester, MainPageInput.txtDaysofWeek.Text); 
             CourseTable.Rows.Add();
+            */
+
             //CourseTable.Columns.Add("Date");
             CourseTable.Columns.Add("Topic Name");
             CourseTable.Columns.Add("Periods");
@@ -52,8 +55,9 @@ namespace CourseCalendarCreator
 
             DataGrid dgvPreview = new DataGrid();
 
+            dgvPreview.DataContext = CourseTable;
 
-            this.Close();
+            //this.Close();
         }
     }
 }
