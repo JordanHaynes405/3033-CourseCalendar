@@ -59,10 +59,8 @@ namespace CourseCalendarCreator
 
                 Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
 
-                /*
-                Add(misValue);
-
-                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+/*
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
                 xlWorkSheet.Cells[1, 1] = "ID";
                 xlWorkSheet.Cells[1, 2] = "Name";
                 xlWorkSheet.Cells[2, 1] = "1";
