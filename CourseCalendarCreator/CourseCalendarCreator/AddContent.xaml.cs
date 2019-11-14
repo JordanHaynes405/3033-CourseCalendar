@@ -44,7 +44,7 @@ namespace CourseCalendarCreator
             CourseTable.Rows.Add(MainPageInput.txtProfessor);
             CourseTable.Rows.Add(MainPageInput.txtSemester, MainPageInput.txtDaysofWeek.Text); 
             CourseTable.Rows.Add();
-            */
+           
 
             //CourseTable.Columns.Add("Date");
             CourseTable.Columns.Add("Topic Name");
@@ -57,7 +57,7 @@ namespace CourseCalendarCreator
 
             MainPageInput.dgvPreview.DataContext = CourseTable.DefaultView;
             //MainPageInput.dgvPreview.ItemsSource = CourseTable.DefaultView;
-
+ */
             this.Close();
         }
     }
