@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+using OfficeOpenXml;
 
 namespace CourseCalendarCreator
 {// Worked by: Jordan, Karan, bob
@@ -48,8 +51,17 @@ namespace CourseCalendarCreator
             ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
             ///https://www.e-iceblue.com/Tutorials/Spire.XLS/Spire.XLS-Program-Guide/Header-and-Footer/Insert-Header-and-Footer-to-Excel-with-C-VB.NET-in-WPF.html
             ///https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
-            ///
 
+
+            using (ExcelPackage Excel = new ExcelPackage())
+            {
+                Excel.Workbook.Worksheets.Add("Worksheet1");
+
+                FileInfo ExcelFile = new FileInfo(@"C:\Users\Jordan Haynes\Desktop\CourseCalendar.xlsx");
+
+
+                Excel.SaveAs(ExcelFile);
+            }
             /*
                             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
