@@ -57,22 +57,19 @@ namespace CourseCalendarCreator
             {
                 Excel.Workbook.Worksheets.Add("Worksheet1");
 
-                FileInfo ExcelFile = new FileInfo(@"C:\Users\Jordan Haynes\Desktop\CourseCalendar.xlsx");
+                Microsoft.Win32.OpenFileDialog DialogT = new Microsoft.Win32.OpenFileDialog();
+                var File = DialogT.OpenFile();
+                
+                //test directory
+                string Path = DialogT.FileName;
+                FileInfo ExcelFile = new FileInfo(@"{Path}CourseCalendar.xlsx");
+
+                //FileInfo ExcelFile = new FileInfo(@"C:\Users\Jordan Haynes\Desktop\CourseCalendar.xlsx");
 
 
                 Excel.SaveAs(ExcelFile);
             }
             /*
-                            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-
-                            if (xlApp == null)
-                            {
-                                MessageBox.Show("Excel is not properly installed!!");
-                                return;
-                            }
-
-                            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
-
 
                             xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
                             xlWorkSheet.Cells[1, 1] = "ID";
