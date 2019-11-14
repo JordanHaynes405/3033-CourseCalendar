@@ -45,13 +45,7 @@ namespace CourseCalendarCreator
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
-
-
-            ///http://csharp.net-informations.com/excel/csharp-create-excel.htm
-            ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
-            ///https://www.e-iceblue.com/Tutorials/Spire.XLS/Spire.XLS-Program-Guide/Header-and-Footer/Insert-Header-and-Footer-to-Excel-with-C-VB.NET-in-WPF.html
-            ///https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
-
+            //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
 
             using (ExcelPackage Excel = new ExcelPackage())
             {
@@ -68,25 +62,10 @@ namespace CourseCalendarCreator
 
                 Excel.SaveAs(ExcelFile);
             }
-            /*
-
-                            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-                            xlWorkSheet.Cells[1, 1] = "ID";
-                            xlWorkSheet.Cells[1, 2] = "Name";
-                            xlWorkSheet.Cells[2, 1] = "1";
-                            xlWorkSheet.Cells[2, 2] = "One";
-                            xlWorkSheet.Cells[3, 1] = "2";
-                            xlWorkSheet.Cells[3, 2] = "Two";
-
-                            xlWorkBook.SaveAs("your-file-name.xls");*/
         }
 
         private void btnApplyFrame_Click(object sender, RoutedEventArgs e)
         {
-            ///https://www.c-sharpcorner.com/UploadFile/bd6c67/how-to-create-excel-file-using-C-Sharp/
-            ///https://www.e-iceblue.com/Tutorials/Spire.XLS/Spire.XLS-Program-Guide/Header-and-Footer/Insert-Header-and-Footer-to-Excel-with-C-VB.NET-in-WPF.html
-
-
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
