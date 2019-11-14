@@ -55,12 +55,17 @@ namespace CourseCalendarCreator
 
             using (ExcelPackage Excel = new ExcelPackage())
             {
-                Excel.Workbook.Worksheets.Add("Worksheet1");
-
+                var CalendarSheet = Excel.Workbook.Worksheets.Add("Worksheet1");
                 Microsoft.Win32.SaveFileDialog DialogT = new Microsoft.Win32.SaveFileDialog();
                 var File = DialogT.ShowDialog();
                 string Path = DialogT.FileName;
                 FileInfo ExcelFile = new FileInfo(Path + ".xlsx");
+
+                CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
+                CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
+                CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
+                CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text} Days: {txtDaysofWeek.Text}");
+
                 Excel.SaveAs(ExcelFile);
             }
             /*
