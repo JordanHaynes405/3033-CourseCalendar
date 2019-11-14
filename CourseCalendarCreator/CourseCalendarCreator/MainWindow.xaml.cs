@@ -57,16 +57,10 @@ namespace CourseCalendarCreator
             {
                 Excel.Workbook.Worksheets.Add("Worksheet1");
 
-                Microsoft.Win32.OpenFileDialog DialogT = new Microsoft.Win32.OpenFileDialog();
-                var File = DialogT.OpenFile();
-                
-                //test directory
+                Microsoft.Win32.SaveFileDialog DialogT = new Microsoft.Win32.SaveFileDialog();
+                var File = DialogT.ShowDialog();
                 string Path = DialogT.FileName;
-                FileInfo ExcelFile = new FileInfo(@"{Path}CourseCalendar.xlsx");
-
-                //FileInfo ExcelFile = new FileInfo(@"C:\Users\Jordan Haynes\Desktop\CourseCalendar.xlsx");
-
-
+                FileInfo ExcelFile = new FileInfo(Path + ".xlsx");
                 Excel.SaveAs(ExcelFile);
             }
             /*
