@@ -35,10 +35,6 @@ namespace CourseCalendarCreator
         {
             MainWindow MainPageInput = new MainWindow();
 
-            string Topic = txtTopicName.Text;
-            string Periods = txtNumTopicPeriods.Text;
-            string Preparation = txtTopicPreparation.Text;
-
             //MainPageInput.CourseTable.Columns.Add(new DataColumn("Date", Type.GetType("System.DateTime")));
             MainPageInput.CourseTable.Columns.Add(new DataColumn("Topic Name", Type.GetType("System.String")));
             MainPageInput.CourseTable.Columns.Add(new DataColumn("Periods", Type.GetType("System.String")));
@@ -48,12 +44,17 @@ namespace CourseCalendarCreator
 
             MainPageInput.dgPreview.ItemsSource = MainPageInput.CourseTable.DefaultView;
 
-            CourseContent CContent = new CourseContent();
-            CContent.Topics.Add(Topic);
-            CContent.Periods.Add(Periods);
-            CContent.Preparations.Add(Preparation);
+            AddToList();
 
             this.Close();
+        }
+
+        public void AddToList()
+        {
+            CourseContent CContent = new CourseContent();
+            CContent.Topics.Add(txtTopicName.Text);
+            CContent.Periods.Add(txtNumTopicPeriods.Text);
+            CContent.Preparations.Add(txtNumTopicPeriods.Text);
         }
     }
 }
