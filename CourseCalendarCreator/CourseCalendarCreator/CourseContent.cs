@@ -16,5 +16,12 @@ namespace CourseCalendarCreator
         {
 
         }
+
+        public void AddToList(string AddTopic, string AddPeriod, string AddPreparation)
+        {
+            Topics.Add(AddTopic);
+            Periods.Add(AddPeriod);
+            Preparations.Add(AddPreparation);
+        }
     }
 }
