@@ -11,5 +11,10 @@ namespace CourseCalendarCreator
         public List<string> Topics { get; set; }
         public List<string> Periods { get; set; }
         public List<string> Preparations { get; set; }
+
+        public CourseContent()
+        {
+
+        }
     }
 }

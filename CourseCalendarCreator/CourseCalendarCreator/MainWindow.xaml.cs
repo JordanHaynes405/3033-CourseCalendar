@@ -41,8 +41,7 @@ namespace CourseCalendarCreator
         public void btnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text)
-    && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
+            if (string.IsNullOrEmpty(txtCourseName.Text)) // && string.IsNullOrEmpty(txtCourseCode.Text) && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text)
             {
                 MessageBox.Show("Please fill the fields on the page before adding topics");
             }
@@ -82,20 +81,20 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C6"].Value = "Periods to Cover";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
-                CourseContent Content = new CourseContent();
-                foreach (var Topic in Content.Topics)
+                CourseContent CContent = new CourseContent();
+                foreach (var Topic in CContent.Topics)
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"B{6+i}"].Value = Topic;
                     i++;
                 }
-                foreach (var Period in Content.Periods)
+                foreach (var Period in CContent.Periods)
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"C{6+i}"].Value = Period;
                     i++;
                 }
-                foreach (var Preparation in Content.Preparations)
+                foreach (var Preparation in CContent.Preparations)
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"C{6+i}"].Value = Preparation;
