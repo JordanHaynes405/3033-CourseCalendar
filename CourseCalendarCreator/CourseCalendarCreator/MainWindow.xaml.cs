@@ -28,9 +28,16 @@ namespace CourseCalendarCreator
 
         public System.Data.DataTable CourseTable = new System.Data.DataTable();
 
-        //public List<string> Topics = new List<string>();
-        //public List<string> Periods = new List<string>();
-        //public List<string> Preparations = new List<string>();
+        public List<string> Topics = new List<string>();
+        public List<string> Periods = new List<string>();
+        public List<string> Preparations = new List<string>();
+
+        public void AddToList(string AddTopic, string AddPeriod, string AddPreparation)
+        {
+            Topics.Add(AddTopic);
+            Periods.Add(AddPeriod);
+            Preparations.Add(AddPreparation);
+        }
 
         public MainWindow()
         {
