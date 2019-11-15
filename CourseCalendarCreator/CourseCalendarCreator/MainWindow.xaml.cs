@@ -23,13 +23,24 @@ namespace CourseCalendarCreator
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Add Content
+        //public Dictionary<int, List<string>> Topics = new Dictionary<int, List<string>>();
+
+        public System.Data.DataTable CourseTable = new System.Data.DataTable();
+
+        //public List<string> Topics = new List<string>();
+        //public List<string> Periods = new List<string>();
+        //public List<string> Preparations = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
+            btnAdd.Content = $"Add Class # 1";
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        public void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text)
     && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
             {
@@ -40,6 +51,10 @@ namespace CourseCalendarCreator
             {
                 AddContent Topic = new AddContent();
                 Topic.Show();
+
+                int i = 1;
+                btnAdd.Content = $"Add Class # {i}";
+                i++;
             }
         }
 
@@ -58,9 +73,34 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
                 CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
                 CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
-                CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}, Days: {txtDaysofWeek.Text}");
+                CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}, Day(s): {txtDaysofWeek.Text}");
                 CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}, End Date: {dprEnd.Text}");
 
+                //Build Columns
+                CalendarSheet.Cells["A6"].Value = "Date";
+                CalendarSheet.Cells["B6"].Value = "Topic";
+                CalendarSheet.Cells["C6"].Value = "Periods to Cover";
+                CalendarSheet.Cells["D6"].Value = "Preparation";
+
+                CourseContent Content = new CourseContent();
+                foreach (var Topic in Content.Topics)
+                {
+                    int i = 1;
+                    CalendarSheet.Cells[$"B{6+i}"].Value = Topic;
+                    i++;
+                }
+                foreach (var Period in Content.Periods)
+                {
+                    int i = 1;
+                    CalendarSheet.Cells[$"C{6+i}"].Value = Period;
+                    i++;
+                }
+                foreach (var Preparation in Content.Preparations)
+                {
+                    int i = 1;
+                    CalendarSheet.Cells[$"C{6+i}"].Value = Preparation;
+                    i++;
+                }
 
                 Excel.SaveAs(ExcelFile);
             }

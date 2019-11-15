@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,45 +20,36 @@ namespace CourseCalendarCreator
     /// </summary>
     public partial class AddContent : Window
     {
+        public int i = 0;
         public AddContent()
         {
             InitializeComponent();
+
+            MainWindow MainPageInput = new MainWindow();
+
+            //lblAddTopic.Content = $"Add Topic for Class # {i}";
+            i++;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //txtTopicName;
-            //txtNumTopicPeriods;
-            //txtTopicPreparation;
-
-
-            //Worked with Saurabh
-
-            System.Data.DataTable CourseTable = new System.Data.DataTable();
-
             MainWindow MainPageInput = new MainWindow();
+            //MainPageInput.CourseTable.Columns.Add(new DataColumn("Date", Type.GetType("System.DateTime")));
+            MainPageInput.CourseTable.Columns.Add(new DataColumn("Topic Name", Type.GetType("System.String")));
+            MainPageInput.CourseTable.Columns.Add(new DataColumn("Periods", Type.GetType("System.String")));
+            MainPageInput.CourseTable.Columns.Add(new DataColumn("Preparation", Type.GetType("System.String"))); 
 
-            //With Kwame
+            MainPageInput.CourseTable.Rows.Add(txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);//pcrTopicStart.Text,
 
-            /*
-            CourseTable.Rows.Add(MainPageInput.txtCourseName.Text, MainPageInput.txtCourseCode.Text);
-            CourseTable.Rows.Add(MainPageInput.txtProfessor);
-            CourseTable.Rows.Add(MainPageInput.txtSemester, MainPageInput.txtDaysofWeek.Text); 
-            CourseTable.Rows.Add();
-           
+            MainPageInput.dgPreview.ItemsSource = MainPageInput.CourseTable.DefaultView;
 
-            //CourseTable.Columns.Add("Date");
-            CourseTable.Columns.Add("Topic Name");
-            CourseTable.Columns.Add("Periods");
-            CourseTable.Columns.Add("Preparation");
+            DataTable employee = new DataTable();
+            employee.Columns.Add(new DataColumn("Id", Type.GetType("System.Int32")));
 
-            CourseTable.Rows.Add(txtTopicName.Text ,txtNumTopicPeriods.Text,txtTopicPreparation.Text);
-
-            DataGrid dgvPreview = new DataGrid();
-
-            MainPageInput.dgvPreview.DataContext = CourseTable.DefaultView;
-            //MainPageInput.dgvPreview.ItemsSource = CourseTable.DefaultView;
- */
+            CourseContent Cont = new CourseContent();
+            Cont.Topics.Add(txtTopicName.Text);
+            Cont.Periods.Add(txtNumTopicPeriods.Text);
+            Cont.Preparations.Add(txtTopicPreparation.Text);
             this.Close();
         }
     }
