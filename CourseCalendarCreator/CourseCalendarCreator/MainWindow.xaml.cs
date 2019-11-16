@@ -89,6 +89,17 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
                 CourseContent CContent = new CourseContent();
+                
+                List<string> Topics = new List<string>();
+                Topics = CContent.Topics;
+
+                List<string> Periods = new List<string>();
+                Periods = CContent.Periods;
+
+                List<string> Preparations = new List<string>();
+                Preparations = CContent.Preparations;
+                
+                
                 foreach (var Topic in CContent.Topics)
                 {
                     int i = 1;
