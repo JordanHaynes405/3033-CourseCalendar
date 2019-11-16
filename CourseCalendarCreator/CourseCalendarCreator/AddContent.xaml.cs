@@ -52,8 +52,11 @@ namespace CourseCalendarCreator
         public void AddToList()
         {
             CourseContent CContent = new CourseContent();
-            CContent.AddToList(txtTopicName.Text, txtNumTopicPeriods.Text, txtNumTopicPeriods.Text);
-            CContent.AddToTopic;
+            List<string> Topics = new List<string>();
+            CContent.Topics = Topics;
+            
+            //CContent.AddToList(txtTopicName.Text, txtNumTopicPeriods.Text, txtNumTopicPeriods.Text);
+
             //CContent.Periods.Add(txtNumTopicPeriods.Text);
             //CContent.Preparations.Add(txtNumTopicPeriods.Text);
         }
