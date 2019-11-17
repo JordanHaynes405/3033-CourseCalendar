@@ -109,7 +109,7 @@ namespace CourseCalendarCreator
         {
             DataGridTextColumn DateCol = new DataGridTextColumn();
             DateCol.Header = "Start Dates";
-            DateCol.Binding = new Binding(TopicDates);
+            DateCol.Binding = new Binding(Convert.ToDateTime(pcrTopicStart.Text).ToShortDateString());
 
             DataGridTextColumn TopicCol = new DataGridTextColumn();
             TopicCol.Header = "Topics";
@@ -122,6 +122,11 @@ namespace CourseCalendarCreator
             DataGridTextColumn PreparationCol = new DataGridTextColumn();
             PreparationCol.Header = "Preparations";
             PreparationCol.Binding = new Binding(txtTopicPreparation.Text);
+
+            dgPreview.Columns.Add(DateCol);
+            dgPreview.Columns.Add(TopicCol);
+            dgPreview.Columns.Add(PeriodCol);
+            dgPreview.Columns.Add(PreparationCol);
         }
 
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
