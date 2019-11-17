@@ -81,8 +81,9 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["B6"].Value = "Topic";
                 CalendarSheet.Cells["C6"].Value = "Periods to Cover";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
-                
-                foreach (var Topic in Topics)
+
+                CourseContent CContent = new CourseContent();
+                foreach (var Topic in CContent.Topics)
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"B{6+i}"].Value = Topic;
