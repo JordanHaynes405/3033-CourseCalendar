@@ -8,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -51,22 +50,20 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You must set up the calendar before exporting to Excel!");
             }
-            //else if (Topics.Count == 0 )
-            //{
-            //    MessageBox.Show("You have not entered any topics for the course calendar");
-            //}
-            else if (Topics.Count < 3 )
+            else if (Topics.Count == 0 )
             {
-                DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                MessageBox.Show("You have not entered any topics for the course calendar");
+            }
+            else if (Topics.Count < 5 )
+            {
+                //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+                dynamic MBResult = MessageBox.Show("You do not have very many topics entered, " +
+                    "are you sure you would like to export to excel?", "Warning!", MessageBoxButton.YesNo);
+
+                if (MBResult == System.Windows.MessageBoxResult.Yes)
                 {
-                    //do something
+                    BuildSpreadSheet();
                 }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-                MessageBoxButton.YesNo.("You don't have very many topics in your course calendar, consider adding more!");
             }
             else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null && pcrTopicStart.Text != null)
             {
@@ -80,13 +77,11 @@ namespace CourseCalendarCreator
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             AddToLists();
-            AddToTable();
-            
+            AddToTable();  
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         public void AddToLists()
