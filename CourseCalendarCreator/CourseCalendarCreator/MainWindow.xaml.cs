@@ -71,8 +71,10 @@ namespace CourseCalendarCreator
                     CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
                     CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
                     CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
-                    CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}, Day(s): {txtDaysofWeek.Text}");
-                    CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}, End Date: {dprEnd.Text}");
+                    CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}");
+                    CalendarSheet.Cells["C4"].Value = ($"Day(s): {txtDaysofWeek.Text}");
+                    CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}");
+                    CalendarSheet.Cells["C5"].Value = ($"End Date: {dprEnd.Text}");
 
                     //Build Columns
                     CalendarSheet.Cells["A6"].Value = "Date";
@@ -82,20 +84,18 @@ namespace CourseCalendarCreator
 
                     for (int i = 0; i <= ItemsAdded - 1; i++)
                     {
-                        CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i];
+                        CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i].ToLongDateString();
                         CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                         CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                         CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
                     }
 
 
-                    CalendarSheet.Cells["A:D"].AutoFitColumns();
+                    CalendarSheet.Cells["A1:D30"].AutoFitColumns();
 
                     CalendarSheet.Cells["A1:D1"].Merge = true;
                     CalendarSheet.Cells["A2:D2"].Merge = true;
                     CalendarSheet.Cells["A3:D3"].Merge = true;
-                    CalendarSheet.Cells["A4:B4"].Merge = true;
-                    CalendarSheet.Cells["C4:D4"].Merge = true;
                     CalendarSheet.Cells["A4:B4"].Merge = true;
                     CalendarSheet.Cells["C4:D4"].Merge = true;
 
@@ -103,7 +103,6 @@ namespace CourseCalendarCreator
                     CalendarSheet.Cells["A2:D2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     CalendarSheet.Cells["A3:D3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["C4:D4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     CalendarSheet.Cells["C4:D4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
@@ -134,8 +133,8 @@ namespace CourseCalendarCreator
 
             ItemsAdded = Topics.Count();
 
-            foreach (var item in Topics)
-                MessageBox.Show($"You have added {item} to begin on the {TopicDate} and proceed for {Periods}" +
+            MessageBox.Show($"You have added {txtTopicName.Text} to begin on the " +
+                $"{Convert.ToDateTime(pcrTopicStart.Text).ToLongDateString()} and proceed for {Periods}" +
                     $" class periods. Preparation shall include {Preparations}.");
 
             ClearText();
