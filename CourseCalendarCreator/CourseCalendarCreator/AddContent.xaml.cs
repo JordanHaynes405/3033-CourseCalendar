@@ -49,6 +49,9 @@ namespace CourseCalendarCreator
             Periods.Add(txtNumTopicPeriods.Text);
             Preparations.Add(txtNumTopicPeriods.Text);
 
+            MessageBox.Show($"You just added {txtTopicName.Text} for {txtNumTopicPeriods.Text} periods, and " +
+                $"{txtNumTopicPeriods.Text} for preparation!");
+
             ClearText();
         }
 

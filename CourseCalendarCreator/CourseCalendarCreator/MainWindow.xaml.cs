@@ -33,12 +33,14 @@ namespace CourseCalendarCreator
         
         public List<string> Preparations = new List<string>();
 
-        public int ItemsAdded = 0;
+        public int ItemsAdded = 1;
+
+        public int ClassNum = 1;
 
         public MainWindow()
         {
             InitializeComponent();
-            btnAdd.Content = $"Add Class # 1";
+            btnAdd.Content = $"Add Class # {ClassNum}";
         }
 
         public void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -51,12 +53,11 @@ namespace CourseCalendarCreator
 
             else
             {
+                ClassNum++;
+                btnAdd.Content = $"Add Class # {ClassNum}";
+
                 AddContent AddCont = new AddContent();
                 AddCont.Show();
-
-                int i = 1;
-                btnAdd.Content = $"Add Class # {i}";
-                i++;
             }
         }
 
