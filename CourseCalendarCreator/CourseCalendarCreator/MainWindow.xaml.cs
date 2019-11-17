@@ -50,11 +50,11 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You must set up the calendar before exporting to Excel!");
             }
-            else if (Topics.Count < 1 )
+            else if (Topics.Count == 0 )
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
-            else if (Topics.Count < 2 )
+            else if (Topics.Count == 1 )
             {
                 MessageBox.Show("You don't have very many topics in your course calendar, consider adding more!");
             }
@@ -84,29 +84,29 @@ namespace CourseCalendarCreator
 
                     for (int i = 0; i <= ItemsAdded - 1; i++)
                     {
-                        CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i].ToLongDateString();
+                        CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i].ToShortDateString();
                         CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                         CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                         CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
                     }
 
+                    var Heading = CalendarSheet.Cells["A1:D6"];
+                    Heading.Style.Font.Bold = true;
+                    Heading.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    CalendarSheet.Cells["A1:D30"].AutoFitColumns();
+                    var Body = CalendarSheet.Cells[$"A7:D{ItemsAdded + 7}"];
+                    Body.Style.Border.Top.Style = Body.Style.Border.Left.Style = Body.Style.Border.Right.Style = Body.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                    var WholeSheet = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
+                    WholeSheet.AutoFitColumns();
 
                     CalendarSheet.Cells["A1:D1"].Merge = true;
                     CalendarSheet.Cells["A2:D2"].Merge = true;
                     CalendarSheet.Cells["A3:D3"].Merge = true;
                     CalendarSheet.Cells["A4:B4"].Merge = true;
                     CalendarSheet.Cells["C4:D4"].Merge = true;
-
-                    CalendarSheet.Cells["A1:D1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["A2:D2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["A3:D3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                    CalendarSheet.Cells["C4:D4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-
-
+                    CalendarSheet.Cells["A5:B5"].Merge = true;
+                    CalendarSheet.Cells["C5:D5"].Merge = true;
 
                     Excel.SaveAs(ExcelFile);
                 }
@@ -134,8 +134,8 @@ namespace CourseCalendarCreator
             ItemsAdded = Topics.Count();
 
             MessageBox.Show($"You have added {txtTopicName.Text} to begin on the " +
-                $"{Convert.ToDateTime(pcrTopicStart.Text).ToLongDateString()} and proceed for {Periods}" +
-                    $" class periods. Preparation shall include {Preparations}.");
+                $"{Convert.ToDateTime(pcrTopicStart.Text).ToLongDateString()} and proceed for {txtNumTopicPeriods.Text}" +
+                    $" class periods. Preparation shall include {txtTopicPreparation.Text}.");
 
             ClearText();
         }
