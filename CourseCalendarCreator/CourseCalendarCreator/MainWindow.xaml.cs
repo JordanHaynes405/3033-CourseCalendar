@@ -106,11 +106,6 @@ namespace CourseCalendarCreator
                 Excel.SaveAs(ExcelFile);
             }
         }
-
-        private void btnApplyFrame_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             //https://social.msdn.microsoft.com/Forums/en-US/ea4cf092-6cd0-46a4-b889-0cb85c6501a8/delete-selected-row-from-datagrid-table-in-wpf?forum=wpf
