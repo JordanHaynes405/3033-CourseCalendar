@@ -20,7 +20,6 @@ namespace CourseCalendarCreator
     /// </summary>
     public partial class AddContent : Window
     {
-        MainWindow MainPageInput = new MainWindow();
         public int i = 0;
 
         public List<string> Topics = new List<string>();
@@ -31,8 +30,6 @@ namespace CourseCalendarCreator
         public AddContent()
         {
             InitializeComponent();
-
-            MainWindow MainPageInput = new MainWindow();
 
             lblAddTopic.Content = $"Add Topic for Class # {i}";
             i++;
@@ -59,6 +56,7 @@ namespace CourseCalendarCreator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow MainPageInput = new MainWindow();
             MainPageInput.SyncLists();
 
             this.Close();
