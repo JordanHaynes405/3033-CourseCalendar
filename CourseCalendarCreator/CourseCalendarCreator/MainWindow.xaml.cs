@@ -23,21 +23,15 @@ namespace CourseCalendarCreator
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Add Content
-        //public Dictionary<int, List<string>> Topics = new Dictionary<int, List<string>>();
-
         public System.Data.DataTable CourseTable = new System.Data.DataTable();
 
-        //public List<string> Topics = new List<string>();
-        //public List<string> Periods = new List<string>();
-        //public List<string> Preparations = new List<string>();
+        public AddContent AddCourseCont = new AddContent();
 
-        //public void AddToList(string AddTopic, string AddPeriod, string AddPreparation)
-        //{
-        //    Topics.Add(AddTopic);
-        //    Periods.Add(AddPeriod);
-        //    Preparations.Add(AddPreparation);
-        //}
+        public List<string> Topics = new List<string>();
+         
+        public List<string> Periods = new List<string>();
+        
+        public List<string> Preparations = new List<string>();
 
         public MainWindow()
         {
@@ -55,8 +49,8 @@ namespace CourseCalendarCreator
 
             else
             {
-                AddContent Topic = new AddContent();
-                Topic.Show();
+                AddContent AddCont = new AddContent();
+                AddCont.Show();
 
                 int i = 1;
                 btnAdd.Content = $"Add Class # {i}";
@@ -89,19 +83,20 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
                 CourseContent CContent = new CourseContent();
-                foreach (var Topic in CContent.Topics)
+
+                foreach (var Topic in Topics) //CContent.
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"B{6+i}"].Value = Topic;
                     i++;
                 }
-                foreach (var Period in CContent.Periods)
+                foreach (var Period in Periods) //CContent.
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"C{6+i}"].Value = Period;
                     i++;
                 }
-                foreach (var Preparation in CContent.Preparations)
+                foreach (var Preparation in Preparations) //CContent.
                 {
                     int i = 1;
                     CalendarSheet.Cells[$"C{6+i}"].Value = Preparation;
@@ -126,6 +121,12 @@ namespace CourseCalendarCreator
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+        public void SyncLists()
+        {
+            Topics = AddCourseCont.Topics;
+            Periods = AddCourseCont.Periods;
+            Preparations = AddCourseCont.Preparations;
         }
     }
 }

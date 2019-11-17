@@ -8,20 +8,20 @@ namespace CourseCalendarCreator
 {
     class CourseContent
     {
-        public List<string> Topics { get; set; }
-        public List<string> Periods { get; set; }
-        public List<string> Preparations { get; set; }
+        public string Topic { get; set; }
+        public string Period { get; set; }
+        public string Preparation { get; set; }
 
         public CourseContent()
         {
 
         }
 
-        public void AddToList(string AddTopic, string AddPeriod, string AddPreparation)
+        public CourseContent (string topic, string period, string preparation)
         {
-            Topics.Add(AddTopic);
-            Periods.Add(AddPeriod);
-            Preparations.Add(AddPreparation);
+            topic = string.Empty;
+            period = string.Empty;
+            preparation = string.Empty;
         }
     }
 }
