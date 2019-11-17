@@ -101,6 +101,7 @@ namespace CourseCalendarCreator
                     var Whole = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
                     Whole.Style.WrapText = true;
 
+
                     CalendarSheet.Column(1).Width = 15;
                     CalendarSheet.Column(2).Width = 26;
                     CalendarSheet.Column(3).Width = 12;
