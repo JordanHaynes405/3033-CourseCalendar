@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using OfficeOpenXml;
+using OfficeOpenXml.Style;
 
 namespace CourseCalendarCreator
 {// Worked by: Jordan, Karan, bob
@@ -53,7 +54,7 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
-            else if (Topics.Count < 5 )
+            else if (Topics.Count < 2 )
             {
                 MessageBox.Show("You don't have very many topics in your course calendar, consider adding more!");
             }
@@ -83,9 +84,28 @@ namespace CourseCalendarCreator
                     {
                         CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i];
                         CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
-                        CalendarSheet.Cells[$"C{7 + i}"].Value = Periods[i];
+                        CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                         CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
                     }
+
+
+                    CalendarSheet.Cells["A:D"].AutoFitColumns();
+
+                    CalendarSheet.Cells["A1:D1"].Merge = true;
+                    CalendarSheet.Cells["A2:D2"].Merge = true;
+                    CalendarSheet.Cells["A3:D3"].Merge = true;
+                    CalendarSheet.Cells["A4:B4"].Merge = true;
+                    CalendarSheet.Cells["C4:D4"].Merge = true;
+                    CalendarSheet.Cells["A4:B4"].Merge = true;
+                    CalendarSheet.Cells["C4:D4"].Merge = true;
+
+                    CalendarSheet.Cells["A1:D1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["A2:D2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["A3:D3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["C4:D4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["A4:B4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    CalendarSheet.Cells["C4:D4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
 
 
