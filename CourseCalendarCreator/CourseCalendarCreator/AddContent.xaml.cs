@@ -20,9 +20,7 @@ namespace CourseCalendarCreator
     /// </summary>
     public partial class AddContent : Window
     {
-        public int i = 0;
-
-        public int ItemsAdded = 1;
+        public int i;
 
         public List<string> Topics = new List<string>();
 
@@ -33,6 +31,7 @@ namespace CourseCalendarCreator
         {
             InitializeComponent();
 
+            i = i + 1;
             lblAddTopic.Content = $"Add Topic for Class # {i}";
         }
 
@@ -40,19 +39,17 @@ namespace CourseCalendarCreator
         {
             i++;
             AddToTable();
-            AddToList();
+            AddToLists();
             lblAddTopic.Content = $"Add Topic for Class # {i}";
         }
 
-        public void AddToList()
+        public void AddToLists()
         {
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
             Preparations.Add(txtNumTopicPeriods.Text);
 
-            txtTopicName.Clear();
-            txtNumTopicPeriods.Clear();
-            txtTopicPreparation.Clear();
+            ClearText();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -71,6 +68,12 @@ namespace CourseCalendarCreator
             //MainPageInput.CourseTable.Columns.Add(new DataColumn("Preparation", Type.GetType("System.String"))); 
             //MainPageInput.CourseTable.Rows.Add(txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);//pcrTopicStart.Text,
             //MainPageInput.dgPreview.ItemsSource = MainPageInput.CourseTable.DefaultView;
+        }
+        public void ClearText()
+        {
+            txtTopicName.Clear();
+            txtNumTopicPeriods.Clear();
+            txtTopicPreparation.Clear();
         }
 }
 }
