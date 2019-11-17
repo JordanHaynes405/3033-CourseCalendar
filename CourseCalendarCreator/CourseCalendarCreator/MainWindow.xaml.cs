@@ -79,7 +79,7 @@ namespace CourseCalendarCreator
                     //Build Columns
                     CalendarSheet.Cells["A6"].Value = "Date";
                     CalendarSheet.Cells["B6"].Value = "Topic";
-                    CalendarSheet.Cells["C6"].Value = "Periods to Cover";
+                    CalendarSheet.Cells["C6"].Value = "Classes";
                     CalendarSheet.Cells["D6"].Value = "Preparation";
 
                     for (int i = 0; i <= ItemsAdded - 1; i++)
@@ -94,11 +94,17 @@ namespace CourseCalendarCreator
                     Heading.Style.Font.Bold = true;
                     Heading.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                    var Body = CalendarSheet.Cells[$"A7:D{ItemsAdded + 7}"];
-                    Body.Style.Border.Top.Style = Body.Style.Border.Left.Style = Body.Style.Border.Right.Style = Body.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    var Body = CalendarSheet.Cells[$"A6:D{ItemsAdded + 7}"];
+                    Body.Style.Border.Top.Style = Body.Style.Border.Left.Style = 
+                        Body.Style.Border.Right.Style = Body.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
-                    var WholeSheet = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
-                    WholeSheet.AutoFitColumns();
+                    var Whole = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
+                    Whole.Style.WrapText = true;
+
+                    CalendarSheet.Column(1).Width = 14;
+                    CalendarSheet.Column(2).Width = 25;
+                    CalendarSheet.Column(3).Width = 14;
+                    CalendarSheet.Column(4).Width = 25;
 
                     CalendarSheet.Cells["A1:D1"].Merge = true;
                     CalendarSheet.Cells["A2:D2"].Merge = true;
