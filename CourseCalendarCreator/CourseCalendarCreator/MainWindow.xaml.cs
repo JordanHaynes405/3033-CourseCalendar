@@ -31,6 +31,8 @@ namespace CourseCalendarCreator
         
         public List<string> Preparations = new List<string>();
 
+        public List<DateTime> TopicDate = new List<DateTime>();
+
         public int ItemsAdded;
 
         public MainWindow()
@@ -76,11 +78,12 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C6"].Value = "Periods to Cover";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
-                for (int i = 0; i <= ItemsAdded; i++)
+                for (int i = 0; i <= ItemsAdded - 1; i++)
                 {
-                    CalendarSheet.Cells[$"B{6+i}"].Value = Topics[i];
-                    CalendarSheet.Cells[$"C{6+i}"].Value = Periods[i];
-                    CalendarSheet.Cells[$"C{6+i}"].Value = Preparations[i];
+                    CalendarSheet.Cells[$"A{7+i}"].Value = Topics[i];
+                    CalendarSheet.Cells[$"B{7+i}"].Value = Topics[i];
+                    CalendarSheet.Cells[$"C{7+i}"].Value = Periods[i];
+                    CalendarSheet.Cells[$"D{7+i}"].Value = Preparations[i];
                 }
 
                 Excel.SaveAs(ExcelFile);
@@ -89,7 +92,7 @@ namespace CourseCalendarCreator
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             AddToLists();
-            //AddToTable();
+            AddToTable();
             
         }
 
@@ -100,11 +103,12 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
+            TopicDate.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
             Preparations.Add(txtTopicPreparation.Text);
 
-            int ItemsAdded = Topics.Count();
+            ItemsAdded = Topics.Count();
 
             foreach (var item in Topics)
                 MessageBox.Show(item + " " + ItemsAdded);
