@@ -115,7 +115,8 @@ namespace CourseCalendarCreator
             ItemsAdded = Topics.Count();
 
             foreach (var item in Topics)
-                MessageBox.Show(item + " " + ItemsAdded);
+                MessageBox.Show($"You have added {item} to begin on the {TopicDate} and proceed for {Periods}" +
+                    $" class periods. Preparation shall include {Preparations}.");
 
             ClearText();
         }
