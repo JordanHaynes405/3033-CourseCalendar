@@ -32,7 +32,7 @@ namespace CourseCalendarCreator
         
         public List<string> Preparations = new List<string>();
 
-        public List<DateTime> TopicDate = new List<DateTime>();
+        public List<DateTime> TopicDates = new List<DateTime>();
 
         public int ItemsAdded;
 
@@ -86,7 +86,7 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
-            TopicDate.Add(Convert.ToDateTime(pcrTopicStart.Text));
+            TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
             Preparations.Add(txtTopicPreparation.Text);
@@ -109,7 +109,7 @@ namespace CourseCalendarCreator
         {
             DataGridTextColumn DateCol = new DataGridTextColumn();
             DateCol.Header = "Start Dates";
-            DateCol.Binding = new Binding(pcrTopicStart.Text);
+            DateCol.Binding = new Binding(TopicDates);
 
             DataGridTextColumn TopicCol = new DataGridTextColumn();
             TopicCol.Header = "Topics";
@@ -156,7 +156,7 @@ namespace CourseCalendarCreator
                 int ExcelIterate = ItemsAdded;
                 for (int i = 0; i <= ExcelIterate - 1; i++)
                 {
-                    CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i].ToShortDateString();
+                    CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDates[i].ToShortDateString();
                     CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                     CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                     CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
