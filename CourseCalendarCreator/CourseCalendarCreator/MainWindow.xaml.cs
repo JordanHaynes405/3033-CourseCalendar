@@ -101,10 +101,10 @@ namespace CourseCalendarCreator
                     var Whole = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
                     Whole.Style.WrapText = true;
 
-                    CalendarSheet.Column(1).Width = 14;
-                    CalendarSheet.Column(2).Width = 25;
-                    CalendarSheet.Column(3).Width = 14;
-                    CalendarSheet.Column(4).Width = 25;
+                    CalendarSheet.Column(1).Width = 15;
+                    CalendarSheet.Column(2).Width = 26;
+                    CalendarSheet.Column(3).Width = 15;
+                    CalendarSheet.Column(4).Width = 26;
 
                     CalendarSheet.Cells["A1:D1"].Merge = true;
                     CalendarSheet.Cells["A2:D2"].Merge = true;
