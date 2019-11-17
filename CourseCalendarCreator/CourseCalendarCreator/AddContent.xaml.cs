@@ -36,7 +36,6 @@ namespace CourseCalendarCreator
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            i = Topics.Count();
             AddToTable();
             AddToLists();
             lblAddTopic.Content = $"Add Topic for Class # {i+1}";
@@ -48,17 +47,21 @@ namespace CourseCalendarCreator
             Periods.Add(txtNumTopicPeriods.Text);
             Preparations.Add(txtTopicPreparation.Text);
 
-            //MessageBox.Show($"You just added {txtTopicName.Text} for {txtNumTopicPeriods.Text} periods, and " +
-            //    $"{txtTopicPreparation.Text} for preparation!");
+            i = Topics.Count();
 
             foreach (var item in Topics)
-                MessageBox.Show(item);
+                MessageBox.Show(item + " " + i);
 
             ClearText();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            FinalCount(Topics);
+            AllTopics(Topics);
+            AllPeriods(Periods);
+            AllPreparations(Preparations);
+
             MainWindow MainPageInput = new MainWindow();
             MainPageInput.SyncLists();
 
@@ -80,5 +83,22 @@ namespace CourseCalendarCreator
             txtNumTopicPeriods.Clear();
             txtTopicPreparation.Clear();
         }
-}
+
+        public int FinalCount(List<string> Topics)
+        {
+            return Topics.Count;
+        }
+        public List<string> AllTopics(List<string> topics)
+        {
+            return Topics;
+        }
+        public List<string> AllPeriods(List<string> periods)
+        {
+            return Periods;
+        }
+        public List<string> AllPreparations(List<string> preparations)
+        {
+            return Preparations;
+        }
+    }
 }

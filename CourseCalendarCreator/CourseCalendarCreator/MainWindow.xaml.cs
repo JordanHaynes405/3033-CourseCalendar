@@ -31,13 +31,14 @@ namespace CourseCalendarCreator
         
         public List<string> Preparations = new List<string>();
 
-        public int ItemsAdded = 1;
+        public int ItemsAdded;
 
-        public int ClassNum = 1;
+        public int ClassNum;
 
         public MainWindow()
         {
             InitializeComponent();
+            ClassNum = ClassNum + 1;
             btnAdd.Content = $"Add Class # {ClassNum}";
         }
 
@@ -108,10 +109,10 @@ namespace CourseCalendarCreator
         {
             AddContent AddCourseCont = new AddContent();
 
-            ItemsAdded = AddCourseCont.i;
-            Topics = AddCourseCont.Topics;
-            Periods = AddCourseCont.Periods;
-            Preparations = AddCourseCont.Preparations;
+            ItemsAdded = AddCourseCont.FinalCount(Topics);
+            Topics = AddCourseCont.AllTopics(Topics);
+            Periods = AddCourseCont.AllPeriods(Periods);
+            Preparations = AddCourseCont.AllPreparations(Preparations); ;
         }
     }
 }
