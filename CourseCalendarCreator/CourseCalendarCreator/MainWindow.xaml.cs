@@ -33,13 +33,9 @@ namespace CourseCalendarCreator
 
         public int ItemsAdded;
 
-        public int ClassNum;
-
         public MainWindow()
         {
             InitializeComponent();
-            ClassNum = ClassNum + 1;
-            btnAdd.Content = $"Add Class # {ClassNum}";
         }
 
         public void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -52,11 +48,7 @@ namespace CourseCalendarCreator
 
             else
             {
-                ClassNum++;
-                btnAdd.Content = $"Add Class # {ClassNum}";
 
-                AddContent AddCont = new AddContent();
-                AddCont.Show();
             }
         }
 
@@ -96,23 +88,16 @@ namespace CourseCalendarCreator
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            AddToTable();
             AddToLists();
+            //AddToTable();
+            
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        //public void SyncLists()
-        //{
-        //    AddContent AddCourseCont = new AddContent();
 
-        //    ItemsAdded = AddCourseCont.FinalCount(Topics);
-        //    Topics = AddCourseCont.AllTopics(Topics);
-        //    Periods = AddCourseCont.AllPeriods(Periods);
-        //    Preparations = AddCourseCont.AllPreparations(Preparations); ;
-        //}
         public void AddToLists()
         {
             Topics.Add(txtTopicName.Text);
