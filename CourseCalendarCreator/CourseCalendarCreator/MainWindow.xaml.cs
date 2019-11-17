@@ -87,6 +87,8 @@ namespace CourseCalendarCreator
                         CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
                     }
 
+
+
                     Excel.SaveAs(ExcelFile);
                 }
             }
