@@ -40,53 +40,55 @@ namespace CourseCalendarCreator
             InitializeComponent();
         }
 
-        public void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(txtCourseName.Text)) // && string.IsNullOrEmpty(txtCourseCode.Text) && string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text)
-            {
-                MessageBox.Show("Please fill the fields on the page before adding topics");
-            }
-
-            else
-            {
-
-            }
-        }
-
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
 
-            using (ExcelPackage Excel = new ExcelPackage())
+            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
+                string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
             {
-                var CalendarSheet = Excel.Workbook.Worksheets.Add("Worksheet1");
-                Microsoft.Win32.SaveFileDialog DialogT = new Microsoft.Win32.SaveFileDialog();
-                var File = DialogT.ShowDialog();
-                string Path = DialogT.FileName;
-                FileInfo ExcelFile = new FileInfo(Path + ".xlsx");
-
-                CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
-                CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
-                CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
-                CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}, Day(s): {txtDaysofWeek.Text}");
-                CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}, End Date: {dprEnd.Text}");
-
-                //Build Columns
-                CalendarSheet.Cells["A6"].Value = "Date";
-                CalendarSheet.Cells["B6"].Value = "Topic";
-                CalendarSheet.Cells["C6"].Value = "Periods to Cover";
-                CalendarSheet.Cells["D6"].Value = "Preparation";
-
-                for (int i = 0; i <= ItemsAdded - 1; i++)
+                MessageBox.Show("You must set up the calendar before exporting to Excel!");
+            }
+            else if (Topics.Count < 1 )
+            {
+                MessageBox.Show("You have not entered any topics for the course calendar");
+            }
+            else if (Topics.Count < 5 )
+            {
+                MessageBox.Show("You don't have very many topics in your course calendar, consider adding more!");
+            }
+            else
+            {
+                using (ExcelPackage Excel = new ExcelPackage())
                 {
-                    CalendarSheet.Cells[$"A{7+i}"].Value = Topics[i];
-                    CalendarSheet.Cells[$"B{7+i}"].Value = Topics[i];
-                    CalendarSheet.Cells[$"C{7+i}"].Value = Periods[i];
-                    CalendarSheet.Cells[$"D{7+i}"].Value = Preparations[i];
-                }
+                    var CalendarSheet = Excel.Workbook.Worksheets.Add("Worksheet1");
+                    Microsoft.Win32.SaveFileDialog DialogT = new Microsoft.Win32.SaveFileDialog();
+                    var File = DialogT.ShowDialog();
+                    string Path = DialogT.FileName;
+                    FileInfo ExcelFile = new FileInfo(Path + ".xlsx");
 
-                Excel.SaveAs(ExcelFile);
+                    CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
+                    CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
+                    CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
+                    CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}, Day(s): {txtDaysofWeek.Text}");
+                    CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}, End Date: {dprEnd.Text}");
+
+                    //Build Columns
+                    CalendarSheet.Cells["A6"].Value = "Date";
+                    CalendarSheet.Cells["B6"].Value = "Topic";
+                    CalendarSheet.Cells["C6"].Value = "Periods to Cover";
+                    CalendarSheet.Cells["D6"].Value = "Preparation";
+
+                    for (int i = 0; i <= ItemsAdded - 1; i++)
+                    {
+                        CalendarSheet.Cells[$"A{7 + i}"].Value = Topics[i];
+                        CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
+                        CalendarSheet.Cells[$"C{7 + i}"].Value = Periods[i];
+                        CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
+                    }
+
+                    Excel.SaveAs(ExcelFile);
+                }
             }
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
