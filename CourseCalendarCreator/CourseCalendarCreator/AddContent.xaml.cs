@@ -22,6 +22,8 @@ namespace CourseCalendarCreator
     {
         public int i = 0;
 
+        public int ItemsAdded = 1;
+
         public List<string> Topics = new List<string>();
 
         public List<string> Periods = new List<string>();
@@ -32,14 +34,13 @@ namespace CourseCalendarCreator
             InitializeComponent();
 
             lblAddTopic.Content = $"Add Topic for Class # {i}";
-            i++;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            i++;
             AddToTable();
             AddToList();
-            i++;
             lblAddTopic.Content = $"Add Topic for Class # {i}";
         }
 

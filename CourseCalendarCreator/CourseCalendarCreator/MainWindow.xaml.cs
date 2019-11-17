@@ -33,6 +33,8 @@ namespace CourseCalendarCreator
         
         public List<string> Preparations = new List<string>();
 
+        public int ItemsAdded = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -82,23 +84,11 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C6"].Value = "Periods to Cover";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
-                foreach (var Topic in Topics)
+                for (int i = 0; i <= ItemsAdded; i++)
                 {
-                    int i = 1;
-                    CalendarSheet.Cells[$"B{6+i}"].Value = Topic;
-                    i++;
-                }
-                foreach (var Period in Periods)
-                {
-                    int i = 1;
-                    CalendarSheet.Cells[$"C{6+i}"].Value = Period;
-                    i++;
-                }
-                foreach (var Preparation in Preparations)
-                {
-                    int i = 1;
-                    CalendarSheet.Cells[$"C{6+i}"].Value = Preparation;
-                    i++;
+                    CalendarSheet.Cells[$"B{6+i}"].Value = Topics[i];
+                    CalendarSheet.Cells[$"C{6+i}"].Value = Periods[i];
+                    CalendarSheet.Cells[$"C{6+i}"].Value = Preparations[i];
                 }
 
                 Excel.SaveAs(ExcelFile);
@@ -117,6 +107,7 @@ namespace CourseCalendarCreator
         }
         public void SyncLists()
         {
+            ItemsAdded = AddCourseCont.i;
             Topics = AddCourseCont.Topics;
             Periods = AddCourseCont.Periods;
             Preparations = AddCourseCont.Preparations;
