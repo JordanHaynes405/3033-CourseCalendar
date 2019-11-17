@@ -96,23 +96,50 @@ namespace CourseCalendarCreator
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            //https://social.msdn.microsoft.com/Forums/en-US/ea4cf092-6cd0-46a4-b889-0cb85c6501a8/delete-selected-row-from-datagrid-table-in-wpf?forum=wpf
-            //DataRowView row = (DataRowView)gridPosts.SelectedItem;
-            //dt.Rows.Remove(row.Row);
+            AddToTable();
+            AddToLists();
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        public void SyncLists()
-        {
-            AddContent AddCourseCont = new AddContent();
+        //public void SyncLists()
+        //{
+        //    AddContent AddCourseCont = new AddContent();
 
-            ItemsAdded = AddCourseCont.FinalCount(Topics);
-            Topics = AddCourseCont.AllTopics(Topics);
-            Periods = AddCourseCont.AllPeriods(Periods);
-            Preparations = AddCourseCont.AllPreparations(Preparations); ;
+        //    ItemsAdded = AddCourseCont.FinalCount(Topics);
+        //    Topics = AddCourseCont.AllTopics(Topics);
+        //    Periods = AddCourseCont.AllPeriods(Periods);
+        //    Preparations = AddCourseCont.AllPreparations(Preparations); ;
+        //}
+        public void AddToLists()
+        {
+            Topics.Add(txtTopicName.Text);
+            Periods.Add(txtNumTopicPeriods.Text);
+            Preparations.Add(txtTopicPreparation.Text);
+
+            int ItemsAdded = Topics.Count();
+
+            foreach (var item in Topics)
+                MessageBox.Show(item + " " + ItemsAdded);
+
+            ClearText();
+        }
+        public void ClearText()
+        {
+            txtTopicName.Clear();
+            txtNumTopicPeriods.Clear();
+            txtTopicPreparation.Clear();
+        }
+        public void AddToTable()
+        {
+            //CourseTable.Columns.Add(new DataColumn("Date", Type.GetType("System.DateTime")));
+            //CourseTable.Columns.Add(new DataColumn("Topic Name", Type.GetType("System.String")));
+            //CourseTable.Columns.Add(new DataColumn("Periods", Type.GetType("System.String")));
+            //CourseTable.Columns.Add(new DataColumn("Preparation", Type.GetType("System.String"))); 
+            //CourseTable.Rows.Add(txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);//pcrTopicStart.Text,
+            //dgPreview.ItemsSource = MainPageInput.CourseTable.DefaultView;
         }
     }
 }

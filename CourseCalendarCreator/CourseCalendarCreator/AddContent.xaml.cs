@@ -55,18 +55,18 @@ namespace CourseCalendarCreator
             ClearText();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FinalCount(Topics);
-            AllTopics(Topics);
-            AllPeriods(Periods);
-            AllPreparations(Preparations);
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    FinalCount(Topics);
+        //    AllTopics(Topics);
+        //    AllPeriods(Periods);
+        //    AllPreparations(Preparations);
 
-            MainWindow MainPageInput = new MainWindow();
-            MainPageInput.SyncLists();
+        //    MainWindow MainPageInput = new MainWindow();
+        //    MainPageInput.SyncLists();
 
-            this.Close();
-        }
+        //    this.Close();
+        //}
 
         public void AddToTable()
         {
