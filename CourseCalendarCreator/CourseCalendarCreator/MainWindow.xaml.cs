@@ -103,8 +103,8 @@ namespace CourseCalendarCreator
 
                     CalendarSheet.Column(1).Width = 15;
                     CalendarSheet.Column(2).Width = 26;
-                    CalendarSheet.Column(3).Width = 15;
-                    CalendarSheet.Column(4).Width = 26;
+                    CalendarSheet.Column(3).Width = 12;
+                    CalendarSheet.Column(4).Width = 34;
 
                     CalendarSheet.Cells["A1:D1"].Merge = true;
                     CalendarSheet.Cells["A2:D2"].Merge = true;
