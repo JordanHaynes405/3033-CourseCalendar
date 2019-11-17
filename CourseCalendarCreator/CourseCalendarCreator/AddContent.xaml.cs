@@ -31,26 +31,28 @@ namespace CourseCalendarCreator
         {
             InitializeComponent();
 
-            i = i + 1;
-            lblAddTopic.Content = $"Add Topic for Class # {i}";
+            lblAddTopic.Content = $"Add Topic for Class # {i+1}";
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            i++;
+            i = Topics.Count();
             AddToTable();
             AddToLists();
-            lblAddTopic.Content = $"Add Topic for Class # {i}";
+            lblAddTopic.Content = $"Add Topic for Class # {i+1}";
         }
 
         public void AddToLists()
         {
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
-            Preparations.Add(txtNumTopicPeriods.Text);
+            Preparations.Add(txtTopicPreparation.Text);
 
-            MessageBox.Show($"You just added {txtTopicName.Text} for {txtNumTopicPeriods.Text} periods, and " +
-                $"{txtNumTopicPeriods.Text} for preparation!");
+            //MessageBox.Show($"You just added {txtTopicName.Text} for {txtNumTopicPeriods.Text} periods, and " +
+            //    $"{txtTopicPreparation.Text} for preparation!");
+
+            foreach (var item in Topics)
+                MessageBox.Show(item);
 
             ClearText();
         }

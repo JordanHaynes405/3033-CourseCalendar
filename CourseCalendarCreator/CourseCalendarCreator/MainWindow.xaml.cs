@@ -25,8 +25,6 @@ namespace CourseCalendarCreator
     {
         public System.Data.DataTable CourseTable = new System.Data.DataTable();
 
-        public AddContent AddCourseCont = new AddContent();
-
         public List<string> Topics = new List<string>();
          
         public List<string> Periods = new List<string>();
@@ -108,6 +106,8 @@ namespace CourseCalendarCreator
         }
         public void SyncLists()
         {
+            AddContent AddCourseCont = new AddContent();
+
             ItemsAdded = AddCourseCont.i;
             Topics = AddCourseCont.Topics;
             Periods = AddCourseCont.Periods;
