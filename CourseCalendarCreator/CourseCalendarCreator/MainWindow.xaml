@@ -35,5 +35,6 @@
         <Label Content="For Holidays and exceptions,&#xA; add them as topics, specify&#xD;&#xA; dates, and add preparations &#xD;&#xA;if desired for homework" HorizontalAlignment="Left" Margin="864,112,0,0" VerticalAlignment="Top" Height="74" Width="166"/>
         <DatePicker x:Name="pcrTopicStart" HorizontalAlignment="Left" Margin="900,377,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCalendarSetup" Content="Calendar Setup" HorizontalAlignment="Left" Height="36" Margin="542,88,0,0" VerticalAlignment="Top" Width="185" FontFamily="Microsoft Sans Serif" FontSize="22" FontWeight="Bold"/>
+        <Button x:Name="btnCloseApp" Content="Close Application" HorizontalAlignment="Left" Margin="38,473,0,0" VerticalAlignment="Top" Width="119" Height="23" FontFamily="Microsoft Sans Serif" Click="btnCloseApp_Click"/>
     </Grid>
 </Window>

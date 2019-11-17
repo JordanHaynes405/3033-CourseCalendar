@@ -81,7 +81,7 @@ namespace CourseCalendarCreator
 
                     for (int i = 0; i <= ItemsAdded - 1; i++)
                     {
-                        CalendarSheet.Cells[$"A{7 + i}"].Value = Topics[i];
+                        CalendarSheet.Cells[$"A{7 + i}"].Value = TopicDate[i];
                         CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                         CalendarSheet.Cells[$"C{7 + i}"].Value = Periods[i];
                         CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
@@ -131,6 +131,12 @@ namespace CourseCalendarCreator
             //CourseTable.Columns.Add(new DataColumn("Preparation", Type.GetType("System.String"))); 
             //CourseTable.Rows.Add(txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);//pcrTopicStart.Text,
             //dgPreview.ItemsSource = MainPageInput.CourseTable.DefaultView;
+        }
+
+        private void btnCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            //https://stackoverflow.com/questions/12977924/how-to-properly-exit-a-c-sharp-application
+            Environment.Exit(0);
         }
     }
 }
