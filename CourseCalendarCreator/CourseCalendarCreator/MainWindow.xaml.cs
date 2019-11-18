@@ -229,7 +229,6 @@ namespace CourseCalendarCreator
 
             //int oldIndex = 1;
             //int newIndex = 1;
-
             //foreach (var orderedDate in orderedDates)
             //{
             //    IndexAnalysis[newIndex] = TopicDates.IndexOf(orderedDate);
