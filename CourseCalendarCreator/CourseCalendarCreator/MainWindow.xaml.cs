@@ -54,6 +54,7 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
+
             else if (Topics.Count < 5 )
             {
                 //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
@@ -65,15 +66,16 @@ namespace CourseCalendarCreator
                     BuildSpreadSheet();
                 }
             }
+
             else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null && pcrTopicStart.Text != null)
             {
                 MessageBox.Show("You should click the ADD button to save your last entry before exporting!");
             }
+
             else
-            {
                 BuildSpreadSheet();
-            }
         }
+
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (!int.TryParse(txtNumTopicPeriods.Text, out int j))
@@ -151,6 +153,7 @@ namespace CourseCalendarCreator
             //https://stackoverflow.com/questions/12977924/how-to-properly-exit-a-c-sharp-application
             Environment.Exit(0);
         }
+
         public void BuildSpreadSheet ()
         {
             using (ExcelPackage Excel = new ExcelPackage())
@@ -194,7 +197,6 @@ namespace CourseCalendarCreator
 
                 var Whole = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
                 Whole.Style.WrapText = true;
-
 
                 CalendarSheet.Column(1).Width = 15;
                 CalendarSheet.Column(2).Width = 26;
