@@ -36,14 +36,6 @@ namespace CourseCalendarCreator
 
         public int ItemsAdded;
 
-        public DataGridTextColumn DateCol = new DataGridTextColumn();
-
-        public DataGridTextColumn TopicCol = new DataGridTextColumn();
-
-        public DataGridTextColumn PeriodCol = new DataGridTextColumn();
-
-        public DataGridTextColumn PreparationCol = new DataGridTextColumn();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -98,7 +90,14 @@ namespace CourseCalendarCreator
 
         public void AddDataGridRows()
         {
-            
+            System.Data.DataRow ContentEntry = CourseTable.NewRow();
+            ContentEntry["Start"] = pcrTopicStart.Text;
+            ContentEntry["Topics"] = txtTopicName.Text;
+            ContentEntry["Classes"] = txtNumTopicPeriods.Text;
+            ContentEntry["Preparation"] = txtTopicPreparation.Text;
+
+            CourseTable.Rows.Add(ContentEntry);
+            dgPreview.ItemsSource = CourseTable.DefaultView;
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
@@ -128,22 +127,19 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
-            //DataGridTextColumn DateCol = new DataGridTextColumn();
-            DateCol.Header = "Start Dates";
+            CourseTable.Columns.Add("Start");
+            CourseTable.Columns.Add("Topics");
+            CourseTable.Columns.Add("Classes");
+            CourseTable.Columns.Add("Preparation");
 
-            //DataGridTextColumn TopicCol = new DataGridTextColumn();
-            TopicCol.Header = "Topics";
+            System.Data.DataRow ContentEntry = CourseTable.NewRow();
+            ContentEntry["Start"] = pcrTopicStart.Text;
+            ContentEntry["Topics"] = txtTopicName.Text;
+            ContentEntry["Classes"] = txtNumTopicPeriods.Text;
+            ContentEntry["Preparation"] = txtTopicPreparation.Text;
 
-            //DataGridTextColumn PeriodCol = new DataGridTextColumn();
-            PeriodCol.Header = "Periods";
-
-            //DataGridTextColumn PreparationCol = new DataGridTextColumn();
-            PreparationCol.Header = "Preparations";
-
-            dgPreview.Columns.Add(DateCol);
-            dgPreview.Columns.Add(TopicCol);
-            dgPreview.Columns.Add(PeriodCol);
-            dgPreview.Columns.Add(PreparationCol);
+            CourseTable.Rows.Add(ContentEntry);
+            dgPreview.ItemsSource = CourseTable.DefaultView;
         }
 
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
