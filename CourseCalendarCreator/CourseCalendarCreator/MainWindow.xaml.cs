@@ -167,8 +167,8 @@ namespace CourseCalendarCreator
 
                 CalendarSheet.Cells["A1"].Value = ($"Course Name: {txtCourseName.Text}");
                 CalendarSheet.Cells["A2"].Value = ($"Course Code: {txtCourseCode.Text}");
-                CalendarSheet.Cells["A3"].Value = ($"Professor {txtProfessor.Text}");
-                CalendarSheet.Cells["A4"].Value = ($"Semester {txtSemester.Text}");
+                CalendarSheet.Cells["A3"].Value = ($"Professor: {txtProfessor.Text}");
+                CalendarSheet.Cells["A4"].Value = ($"Semester: {txtSemester.Text}");
                 CalendarSheet.Cells["C4"].Value = ($"Day(s): {txtDaysofWeek.Text}");
                 CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}");
                 CalendarSheet.Cells["C5"].Value = ($"End Date: {dprEnd.Text}");
