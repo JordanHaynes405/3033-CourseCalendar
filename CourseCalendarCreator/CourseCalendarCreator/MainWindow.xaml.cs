@@ -18,7 +18,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
 namespace CourseCalendarCreator
-{// Worked by: Jordan, Karan, bob
+{// Worked by: Jordan, Karan, Saurabh, and Kwame
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
