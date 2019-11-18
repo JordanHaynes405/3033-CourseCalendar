@@ -77,7 +77,16 @@ namespace CourseCalendarCreator
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             AddToLists();
-            AddToTable();  
+
+            if (Topics.Count >=1)
+            {
+                AddDataGridRows();
+            }
+            else
+            {
+                AddDataGridColumns(); 
+            }
+ 
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
@@ -105,7 +114,7 @@ namespace CourseCalendarCreator
             txtNumTopicPeriods.Clear();
             txtTopicPreparation.Clear();
         }
-        public void AddToTable()
+        public void AddDataGridColumns()
         {
             DataGridTextColumn DateCol = new DataGridTextColumn();
             DateCol.Header = "Start Dates";
