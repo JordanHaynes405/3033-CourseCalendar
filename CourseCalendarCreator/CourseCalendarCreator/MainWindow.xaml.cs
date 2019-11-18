@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Worked by: Jordan, Karan, Saurabh, and Kwame
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,8 +20,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
 namespace CourseCalendarCreator
-{// Worked by: Jordan, Karan, Saurabh, and Kwame
-    /// <summary>
+{   /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
