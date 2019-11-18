@@ -140,6 +140,11 @@ namespace CourseCalendarCreator
 
             CourseTable.Rows.Add(ContentEntry);
             dgPreview.ItemsSource = CourseTable.DefaultView;
+
+            dgPreview.Columns[0].Width = 60;
+            dgPreview.Columns[1].Width = 100;
+            dgPreview.Columns[2].Width = 50;
+            dgPreview.Columns[3].Width = 240;
         }
 
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
