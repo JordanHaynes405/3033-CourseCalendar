@@ -221,31 +221,31 @@ namespace CourseCalendarCreator
         {
             List<DateTime> tempDates = new List<DateTime>();
             tempDates = TopicDates;
-            tempDates.OrderBy(x => x.Date);
 
+            //tempDates.OrderBy(x => x.Date);
             var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
 
-            int[] IndexAnalysis = new int[ItemsAdded];
+            //int[] IndexAnalysis = new int[ItemsAdded];
 
-            int oldIndex = 1;
-            int newIndex = 1;
+            //int oldIndex = 1;
+            //int newIndex = 1;
 
-            foreach (var orderedDate in orderedDates)
-            {
-                IndexAnalysis[newIndex] = TopicDates.IndexOf(orderedDate);
-                newIndex++;
-            }
+            //foreach (var orderedDate in orderedDates)
+            //{
+            //    IndexAnalysis[newIndex] = TopicDates.IndexOf(orderedDate);
+            //    newIndex++;
+            //}
 
-            foreach (var TopicDate in TopicDates)
-            {
-                //foreach topicdate in topic dates, topicdate indexof oldindex equals new topic
+            //foreach (var TopicDate in TopicDates)
+            //{
+            //    //foreach topicdate in topic dates, topicdate indexof oldindex equals new topic
 
-                //oldIndex = TopicDate.IndexOf(TopicDate[newIndex]);
+            //    //oldIndex = TopicDate.IndexOf(TopicDate[newIndex]);
 
-                //var item = reg[0];
-                //reg.Remove(item); //Removes the specific item
-                //reg.Add(item); //add's an item to the end of the list
-            }
+            //    //var item = reg[0];
+            //    //reg.Remove(item); //Removes the specific item
+            //    //reg.Add(item); //add's an item to the end of the list
+            //}
 
             foreach (var orderDate in orderedDates)
             {
