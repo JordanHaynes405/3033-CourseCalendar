@@ -40,6 +40,8 @@ namespace CourseCalendarCreator
         public MainWindow()
         {
             InitializeComponent();
+
+            MessageBox.Show("Product is in testing mode"); //remove export conditional commenting to make operational
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
