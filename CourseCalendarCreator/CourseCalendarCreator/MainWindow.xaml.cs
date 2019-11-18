@@ -46,35 +46,37 @@ namespace CourseCalendarCreator
         {
             //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
 
+            Reorder();
+
             if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
                 string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
             {
                 MessageBox.Show("You must set up the calendar before exporting to Excel!");
             }
-            if (Topics.Count == 0 )//else 
+            else if (Topics.Count == 0 )//
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
 
-            else if (Topics.Count < 5 )
-            {
-                //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-                dynamic MBResult = MessageBox.Show("You do not have very many topics entered, " +
-                    "are you sure you would like to export to excel?", "Warning!", MessageBoxButton.YesNo);
+            //else if (Topics.Count < 5 )
+            //{
+            //    //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+            //    dynamic MBResult = MessageBox.Show("You do not have very many topics entered, " +
+            //        "are you sure you would like to export to excel?", "Warning!", MessageBoxButton.YesNo);
 
-                if (MBResult == System.Windows.MessageBoxResult.Yes)
-                {
-                    BuildSpreadSheet();
-                }
-            }
+            //    if (MBResult == System.Windows.MessageBoxResult.Yes)
+            //    {
+            //        BuildSpreadSheet();
+            //    }
+            //}
 
             else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null && pcrTopicStart.Text != null)
             {
                 MessageBox.Show("You should click the ADD button to save your last entry before exporting!");
             }
 
-            else
-                BuildSpreadSheet();
+            //else
+            //    BuildSpreadSheet();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -172,8 +174,6 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C4"].Value = ($"Day(s): {txtDaysofWeek.Text}");
                 CalendarSheet.Cells["A5"].Value = ($"Start Date: {dprStart.Text}");
                 CalendarSheet.Cells["C5"].Value = ($"End Date: {dprEnd.Text}");
-
-                //Build Columns
                 CalendarSheet.Cells["A6"].Value = "Date";
                 CalendarSheet.Cells["B6"].Value = "Topic";
                 CalendarSheet.Cells["C6"].Value = "Classes";
@@ -213,6 +213,17 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C5:D5"].Merge = true;
 
                 Excel.SaveAs(ExcelFile);
+            }
+        }
+        public void Reorder()
+        {
+            List<DateTime> tempDates = new List<DateTime>();
+            tempDates = TopicDates;
+            tempDates.OrderBy(x => x.Date);
+
+            foreach (var tempDate in tempDates)
+            {
+                MessageBox.Show(tempDate.ToShortDateString());
             }
         }
     }
