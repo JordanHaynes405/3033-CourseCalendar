@@ -45,12 +45,12 @@ namespace CourseCalendarCreator
         {
             //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
 
-            //if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
-            //    string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
-            //{
-            //    MessageBox.Show("You must set up the calendar before exporting to Excel!");
-            //}
-            if (Topics.Count == 0 )//else 
+            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
+                string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
+            {
+                MessageBox.Show("You must set up the calendar before exporting to Excel!");
+            }
+            else if (Topics.Count == 0 )
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
@@ -127,6 +127,8 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
+            //https://stackoverflow.com/questions/704724/programmatically-add-column-rows-to-wpf-datagrid
+            //https://stackoverflow.com/questions/11926534/how-to-change-column-width-in-datagridview
             CourseTable.Columns.Add("Start");
             CourseTable.Columns.Add("Topics");
             CourseTable.Columns.Add("Classes");
