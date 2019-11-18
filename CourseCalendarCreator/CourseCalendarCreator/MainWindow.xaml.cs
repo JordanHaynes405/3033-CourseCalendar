@@ -36,6 +36,14 @@ namespace CourseCalendarCreator
 
         public int ItemsAdded;
 
+        public DataGridTextColumn DateCol = new DataGridTextColumn();
+
+        public DataGridTextColumn TopicCol = new DataGridTextColumn();
+
+        public DataGridTextColumn PeriodCol = new DataGridTextColumn();
+
+        public DataGridTextColumn PreparationCol = new DataGridTextColumn();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,12 +53,12 @@ namespace CourseCalendarCreator
         {
             //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
 
-            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
-                string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
-            {
-                MessageBox.Show("You must set up the calendar before exporting to Excel!");
-            }
-            else if (Topics.Count == 0 )
+            //if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
+            //    string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
+            //{
+            //    MessageBox.Show("You must set up the calendar before exporting to Excel!");
+            //}
+            if (Topics.Count == 0 )//else 
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
@@ -76,8 +84,6 @@ namespace CourseCalendarCreator
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            AddToLists();
-
             if (Topics.Count >=1)
             {
                 AddDataGridRows();
@@ -86,7 +92,13 @@ namespace CourseCalendarCreator
             {
                 AddDataGridColumns(); 
             }
- 
+
+            AddToLists();
+        }
+
+        public void AddDataGridRows()
+        {
+            
         }
 
         private void txtCourseName_TextChanged(object sender, TextChangedEventArgs e)
@@ -116,21 +128,17 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
-            DataGridTextColumn DateCol = new DataGridTextColumn();
+            //DataGridTextColumn DateCol = new DataGridTextColumn();
             DateCol.Header = "Start Dates";
-            DateCol.Binding = new Binding(Convert.ToDateTime(pcrTopicStart.Text).ToShortDateString());
 
-            DataGridTextColumn TopicCol = new DataGridTextColumn();
+            //DataGridTextColumn TopicCol = new DataGridTextColumn();
             TopicCol.Header = "Topics";
-            TopicCol.Binding = new Binding(txtTopicName.Text);
 
-            DataGridTextColumn PeriodCol = new DataGridTextColumn();
+            //DataGridTextColumn PeriodCol = new DataGridTextColumn();
             PeriodCol.Header = "Periods";
-            PeriodCol.Binding = new Binding(txtNumTopicPeriods.Text);
 
-            DataGridTextColumn PreparationCol = new DataGridTextColumn();
+            //DataGridTextColumn PreparationCol = new DataGridTextColumn();
             PreparationCol.Header = "Preparations";
-            PreparationCol.Binding = new Binding(txtTopicPreparation.Text);
 
             dgPreview.Columns.Add(DateCol);
             dgPreview.Columns.Add(TopicCol);
