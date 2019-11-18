@@ -224,10 +224,16 @@ namespace CourseCalendarCreator
             var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
 
             int[] IndexAnalysis = new int[ItemsAdded];
-
+            int itArray = 1;
             foreach (var orderedDate in orderedDates)
             {
-                int i = TopicDates.IndexOf(orderedDate);
+                IndexAnalysis[itArray] = TopicDates.IndexOf(orderedDate);
+                itArray++;
+            }
+
+            foreach (var TopicDate in TopicDates)
+            {
+
             }
 
             foreach (var orderDate in orderedDates)
