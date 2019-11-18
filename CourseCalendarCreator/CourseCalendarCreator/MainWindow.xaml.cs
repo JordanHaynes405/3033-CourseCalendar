@@ -50,7 +50,7 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You must set up the calendar before exporting to Excel!");
             }
-            else if (Topics.Count == 0 )
+            if (Topics.Count == 0 )//else 
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
@@ -76,15 +76,16 @@ namespace CourseCalendarCreator
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (Topics.Count >=1)
-            {
-                AddDataGridRows();
-            }
-            else
-            {
-                AddDataGridColumns(); 
-            }
+            if (!int.TryParse(txtNumTopicPeriods.Text, out int j))
+                MessageBox.Show("You entered a non-numeric value into the --Topic Periods To Cover-- feild, please correct this!");
 
+            else if (Topics.Count >= 1)
+                AddDataGridRows();
+
+            else
+                AddDataGridColumns();
+
+            if (int.TryParse(txtNumTopicPeriods.Text, out int k))
             AddToLists();
         }
 
@@ -112,10 +113,6 @@ namespace CourseCalendarCreator
             Preparations.Add(txtTopicPreparation.Text);
 
             ItemsAdded = Topics.Count();
-
-            MessageBox.Show($"You have added {txtTopicName.Text} to begin on the " +
-                $"{Convert.ToDateTime(pcrTopicStart.Text).ToLongDateString()} and proceed for {txtNumTopicPeriods.Text}" +
-                    $" class periods. Preparation shall include {txtTopicPreparation.Text}.");
 
             ClearText();
         }
