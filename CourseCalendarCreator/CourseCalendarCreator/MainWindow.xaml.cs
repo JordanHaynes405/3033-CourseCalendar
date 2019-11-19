@@ -114,6 +114,9 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
+            Topic CTopic = new Topic(); //                             Topic Class List
+            CTopic.AddToTopicList(pcrTopicStart.Text, txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);
+
             TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
@@ -131,6 +134,14 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
+            Topic CTopic = new Topic();
+            //Test Topic Class List
+            foreach (var topic in CTopic.TopicList) //                  Topic Class
+            {
+                MessageBox.Show(topic);
+            }
+            
+
             //https://stackoverflow.com/questions/704724/programmatically-add-column-rows-to-wpf-datagrid
             //https://stackoverflow.com/questions/11926534/how-to-change-column-width-in-datagridview
             CourseTable.Columns.Add("Start");
@@ -222,29 +233,7 @@ namespace CourseCalendarCreator
             List<DateTime> tempDates = new List<DateTime>();
             tempDates = TopicDates;
 
-            //tempDates.OrderBy(x => x.Date);
             var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
-
-            //int[] IndexAnalysis = new int[ItemsAdded];
-
-            //int oldIndex = 1;
-            //int newIndex = 1;
-            //foreach (var orderedDate in orderedDates)
-            //{
-            //    IndexAnalysis[newIndex] = TopicDates.IndexOf(orderedDate);
-            //    newIndex++;
-            //}
-
-            //foreach (var TopicDate in TopicDates)
-            //{
-            //    //foreach topicdate in topic dates, topicdate indexof oldindex equals new topic
-
-            //    //oldIndex = TopicDate.IndexOf(TopicDate[newIndex]);
-
-            //    //var item = reg[0];
-            //    //reg.Remove(item); //Removes the specific item
-            //    //reg.Add(item); //add's an item to the end of the list
-            //}
 
             foreach (var orderDate in orderedDates)
             {

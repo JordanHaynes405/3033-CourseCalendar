@@ -8,9 +8,14 @@ namespace CourseCalendarCreator
 {
     class Topic
     {
-        public DateTime TopicStartDate { get; set; }
+        public string TopicStartDate { get; set; }
         public string TopicName { get; set; }
-        public int TopicPeriods { get; set; }
-        public string Preparatinon { get; set; }
+        public string TopicPeriods { get; set; }
+        public string Preparation { get; set; }
+
+        public Topic ()
+        {
+
+        }
     }
 }
