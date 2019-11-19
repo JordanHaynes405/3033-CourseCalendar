@@ -55,7 +55,7 @@ namespace CourseCalendarCreator
             {
                 MessageBox.Show("You must set up the calendar before exporting to Excel!");
             }
-            else if (Topics.Count == 0 )//
+            else if (Topics.Count == 0)//
             {
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
