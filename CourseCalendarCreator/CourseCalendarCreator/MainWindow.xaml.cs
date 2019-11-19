@@ -114,8 +114,8 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
-            Topic CTopic = new Topic(); //                             Topic Class List
-            CTopic.AddToTopicList(pcrTopicStart.Text, txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);
+            //Topic CTopic = new Topic(); //                             Topic Class List
+            //CTopic.AddToTopicList(pcrTopicStart.Text, txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);
 
             TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
@@ -134,12 +134,12 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
-            Topic CTopic = new Topic();
-            //Test Topic Class List
-            foreach (var topic in CTopic.TopicList) //                  Topic Class
-            {
-                MessageBox.Show(topic);
-            }
+            //Topic CTopic = new Topic();
+            ////Test Topic Class List
+            //foreach (var topic in CTopic.TopicList) //                  Topic Class
+            //{
+            //    MessageBox.Show(topic);
+            //}
             
 
             //https://stackoverflow.com/questions/704724/programmatically-add-column-rows-to-wpf-datagrid
