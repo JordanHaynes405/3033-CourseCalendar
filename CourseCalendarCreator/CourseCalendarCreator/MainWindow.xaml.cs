@@ -117,27 +117,6 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
-            //Topic CTopic = new Topic(); //                             Topic Class List
-
-            //CTopic.TopicName = txtTopicName.Text;
-            //CTopic.TopicPeriods = txtNumTopicPeriods.Text;
-            //CTopic.Preparation = txtTopicPreparation.Text;
-            //CTopic.TopicStartDate = pcrTopicStart.Text;
-
-            //TopicInputs.Add(CTopic.TopicStartDate);
-            //TopicInputs.Add(CTopic.TopicName);
-            //TopicInputs.Add(CTopic.TopicPeriods);
-            //TopicInputs.Add(CTopic.Preparation);
-
-            //for (int i = 0; i < TopicInputs.Count; i++)
-            //{
-            //    MessageBox.Show(TopicInputs[i]);
-            //}
-
-
-
-
-
             TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
