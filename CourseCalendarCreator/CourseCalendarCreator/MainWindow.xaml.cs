@@ -43,8 +43,6 @@ namespace CourseCalendarCreator
         public MainWindow()
         {
             InitializeComponent();
-
-            MessageBox.Show("Product is in testing mode"); //remove export conditional commenting to make operational
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
@@ -63,25 +61,25 @@ namespace CourseCalendarCreator
                 MessageBox.Show("You have not entered any topics for the course calendar");
             }
 
-            //else if (Topics.Count < 5 )
-            //{
-            //    //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-            //    dynamic MBResult = MessageBox.Show("You do not have very many topics entered, " +
-            //        "are you sure you would like to export to excel?", "Warning!", MessageBoxButton.YesNo);
+            else if (Topics.Count < 5)
+            {
+                //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+                dynamic MBResult = MessageBox.Show("You do not have very many topics entered, " +
+                    "are you sure you would like to export to excel?", "Warning!", MessageBoxButton.YesNo);
 
-            //    if (MBResult == System.Windows.MessageBoxResult.Yes)
-            //    {
-            //        BuildSpreadSheet();
-            //    }
-            //}
+                if (MBResult == System.Windows.MessageBoxResult.Yes)
+                {
+                    BuildSpreadSheet();
+                }
+            }
 
             else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null && pcrTopicStart.Text != null)
             {
                 MessageBox.Show("You should click the ADD button to save your last entry before exporting!");
             }
 
-            //else
-            //    BuildSpreadSheet();
+            else
+                BuildSpreadSheet();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -117,6 +115,7 @@ namespace CourseCalendarCreator
 
         public void AddToLists()
         {
+
             TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
             Periods.Add(txtNumTopicPeriods.Text);
@@ -185,6 +184,7 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C6"].Value = "Classes";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
+                int j = 0;
                 int ExcelIterate = ItemsAdded;
                 for (int i = 0; i <= ExcelIterate - 1; i++)
                 {
@@ -192,6 +192,7 @@ namespace CourseCalendarCreator
                     CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                     CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                     CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
+                    i = j;
                 }
 
                 var Heading = CalendarSheet.Cells["A1:D6"];
@@ -218,6 +219,8 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["A5:B5"].Merge = true;
                 CalendarSheet.Cells["C5:D5"].Merge = true;
 
+                CalendarSheet.Cells[$"A6:A{j}"].Sort(6, true);
+
                 Excel.SaveAs(ExcelFile);
             }
         }
@@ -226,12 +229,9 @@ namespace CourseCalendarCreator
             List<DateTime> tempDates = new List<DateTime>();
             tempDates = TopicDates;
 
-            var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
 
-            foreach (var orderDate in orderedDates)
-            {
-                MessageBox.Show(orderDate.ToShortDateString());
-            }
+
+            var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
             
         }
     }
