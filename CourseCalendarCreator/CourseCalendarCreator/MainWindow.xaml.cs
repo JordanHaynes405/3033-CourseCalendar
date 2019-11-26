@@ -37,6 +37,9 @@ namespace CourseCalendarCreator
 
         public int ItemsAdded;
 
+
+        public List<string> TopicInputs = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -115,7 +118,25 @@ namespace CourseCalendarCreator
         public void AddToLists()
         {
             //Topic CTopic = new Topic(); //                             Topic Class List
-            //CTopic.AddToTopicList(pcrTopicStart.Text, txtTopicName.Text, txtNumTopicPeriods.Text, txtTopicPreparation.Text);
+
+            //CTopic.TopicName = txtTopicName.Text;
+            //CTopic.TopicPeriods = txtNumTopicPeriods.Text;
+            //CTopic.Preparation = txtTopicPreparation.Text;
+            //CTopic.TopicStartDate = pcrTopicStart.Text;
+
+            //TopicInputs.Add(CTopic.TopicStartDate);
+            //TopicInputs.Add(CTopic.TopicName);
+            //TopicInputs.Add(CTopic.TopicPeriods);
+            //TopicInputs.Add(CTopic.Preparation);
+
+            //for (int i = 0; i < TopicInputs.Count; i++)
+            //{
+            //    MessageBox.Show(TopicInputs[i]);
+            //}
+
+
+
+
 
             TopicDates.Add(Convert.ToDateTime(pcrTopicStart.Text));
             Topics.Add(txtTopicName.Text);
@@ -134,13 +155,6 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
-            //Topic CTopic = new Topic();
-            ////Test Topic Class List
-            //foreach (var topic in CTopic.TopicList) //                  Topic Class
-            //{
-            //    MessageBox.Show(topic);
-            //}
-            
 
             //https://stackoverflow.com/questions/704724/programmatically-add-column-rows-to-wpf-datagrid
             //https://stackoverflow.com/questions/11926534/how-to-change-column-width-in-datagridview
