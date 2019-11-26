@@ -219,9 +219,14 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["A5:B5"].Merge = true;
                 CalendarSheet.Cells["C5:D5"].Merge = true;
 
-                CalendarSheet.Cells[$"A6:A{j}"].Sort(6, true);
 
-                Excel.SaveAs(ExcelFile);
+                //Attention Here!
+                //using (ExcelRange excelRange = Body)
+                //{
+                //    excelRange.Sort(1, true);
+                //}
+
+                //Excel.SaveAs(ExcelFile);
             }
         }
         public void Reorder()
