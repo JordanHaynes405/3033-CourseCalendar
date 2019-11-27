@@ -53,7 +53,6 @@ namespace CourseCalendarCreator
             {
             }
 
-
             if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
                 string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
             {
@@ -87,7 +86,13 @@ namespace CourseCalendarCreator
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (!int.TryParse(txtNumTopicPeriods.Text, out int j))
+            if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
+    string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
+            {
+                MessageBox.Show("You must set up the calendar before exporting to Excel!");
+            }
+
+            else if (!int.TryParse(txtNumTopicPeriods.Text, out int j))
                 MessageBox.Show("You entered a non-numeric value into the --Topic Periods To Cover-- feild, please correct this!");
 
             else if (Topics.Count >= 1)
