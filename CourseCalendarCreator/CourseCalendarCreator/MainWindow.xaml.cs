@@ -256,6 +256,7 @@ namespace CourseCalendarCreator
                     MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
                 }
             }
+
             catch
             {
                 List<string> TempTopics = new List<string>();
