@@ -249,12 +249,6 @@ namespace CourseCalendarCreator
                 {
                     Preparations = Preparations.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
                 }
-
-                foreach (var Topic in Topics)
-                {
-                    int index = Topics.IndexOf(Topic);
-                    MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
-                }
             }
 
             catch
@@ -301,12 +295,6 @@ namespace CourseCalendarCreator
                             Preparations = TempPreps;
                         }
                     }
-                }
-
-                foreach (var Topic in Topics)
-                {
-                    int index = Topics.IndexOf(Topic);
-                    MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
                 }
             }
         }
