@@ -233,25 +233,80 @@ namespace CourseCalendarCreator
         {
             TopicDates = TopicDates.OrderBy(x => x.Date).ToList();
 
-            for (int i = 1; i <= ItemsAdded; i++)
+            try
             {
-                Topics = Topics.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
-            }
+                for (int i = 1; i <= ItemsAdded - 1; i++)
+                {
+                    Topics = Topics.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+                }
 
-            for (int i = 1; i <= ItemsAdded; i++)
-            {
-                Periods = Periods.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
-            }
+                for (int i = 1; i <= ItemsAdded - 1; i++)
+                {
+                    Periods = Periods.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+                }
 
-            for (int i = 1; i <= ItemsAdded; i++)
-            {
-                Preparations = Preparations.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
-            }
+                for (int i = 1; i <= ItemsAdded - 1; i++)
+                {
+                    Preparations = Preparations.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+                }
 
-            foreach (var Topic in Topics)
+                foreach (var Topic in Topics)
+                {
+                    int index = Topics.IndexOf(Topic);
+                    MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
+                }
+            }
+            catch
             {
-                int index = Topics.IndexOf(Topic);
-                MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
+                List<string> TempTopics = new List<string>();
+                List<string> TempPeriods = new List<string>();
+                List<string> TempPreps = new List<string>();
+
+                for (int i = 0; i <= TopicDates.Count; i++)
+                {
+                    for (int j = 0; i+1 <= TopicDates.Count; j++)
+                    {
+                        if (Topics.IndexOf(Topics[j]) > Topics.IndexOf(Topics[i]))
+                        {
+                            TempTopics.Add(Topics[i]);
+                            Topics[i] = Topics[j];
+                            Topics[j] = TempTopics[i];
+                            Topics = TempTopics;
+                        }
+                    }
+                }
+                for (int i = 0; i <= TopicDates.Count; i++)
+                {
+                    for (int j = 0; i + 1 <= Periods.Count; j++)
+                    {
+                        if (Periods.IndexOf(Periods[j]) > Periods.IndexOf(Periods[i]))
+                        {
+                            TempPeriods.Add(Periods[i]);
+                            Periods[i] = Periods[j];
+                            Periods[j] = TempPeriods[i];
+                            Periods = TempPeriods;
+                        }
+                    }
+                }
+                for (int i = 0; i <= Preparations.Count; i++)
+                {
+                    for (int j = 0; i + 1 <= Preparations.Count; j++)
+                    {
+                        if (Preparations.IndexOf(Preparations[j]) > Preparations.IndexOf(Preparations[i]))
+                        {
+                            TempPreps.Add(Preparations[i]);
+                            Preparations[i] = Preparations[j];
+                            Preparations[j] = TempPreps[i];
+                            Preparations = TempPreps;
+                        }
+                    }
+                }
+
+                foreach (var Topic in Topics)
+                {
+                    int index = Topics.IndexOf(Topic);
+                    MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
+                }
             }
         }
     }
