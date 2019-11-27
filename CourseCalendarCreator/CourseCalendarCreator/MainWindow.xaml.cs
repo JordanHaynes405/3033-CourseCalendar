@@ -37,9 +37,6 @@ namespace CourseCalendarCreator
 
         public int ItemsAdded;
 
-
-        public List<string> TopicInputs = new List<string>();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -48,8 +45,14 @@ namespace CourseCalendarCreator
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             //https://www.codebyamir.com/blog/create-excel-files-in-c-sharp
+            try 
+            {
+                Reorder();
+            }
+            catch
+            {
+            }
 
-            Reorder();
 
             if (string.IsNullOrEmpty(txtCourseName.Text) && string.IsNullOrEmpty(txtCourseCode.Text) &&
                 string.IsNullOrEmpty(txtProfessor.Text) && string.IsNullOrEmpty(txtSemester.Text))
@@ -133,7 +136,6 @@ namespace CourseCalendarCreator
         }
         public void AddDataGridColumns()
         {
-
             //https://stackoverflow.com/questions/704724/programmatically-add-column-rows-to-wpf-datagrid
             //https://stackoverflow.com/questions/11926534/how-to-change-column-width-in-datagridview
             CourseTable.Columns.Add("Start");
@@ -184,7 +186,6 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["C6"].Value = "Classes";
                 CalendarSheet.Cells["D6"].Value = "Preparation";
 
-                int j = 0;
                 int ExcelIterate = ItemsAdded;
                 for (int i = 0; i <= ExcelIterate - 1; i++)
                 {
@@ -192,7 +193,6 @@ namespace CourseCalendarCreator
                     CalendarSheet.Cells[$"B{7 + i}"].Value = Topics[i];
                     CalendarSheet.Cells[$"C{7 + i}"].Value = Convert.ToInt32(Periods[i]);
                     CalendarSheet.Cells[$"D{7 + i}"].Value = Preparations[i];
-                    i = j;
                 }
 
                 var Heading = CalendarSheet.Cells["A1:D6"];
@@ -231,13 +231,28 @@ namespace CourseCalendarCreator
         }
         public void Reorder()
         {
-            List<DateTime> tempDates = new List<DateTime>();
-            tempDates = TopicDates;
+            TopicDates = TopicDates.OrderBy(x => x.Date).ToList();
 
+            for (int i = 1; i <= ItemsAdded; i++)
+            {
+                Topics = Topics.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+            }
 
+            for (int i = 1; i <= ItemsAdded; i++)
+            {
+                Periods = Periods.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+            }
 
-            var orderedDates = tempDates.OrderBy(x => x.Date).ToList();
-            
+            for (int i = 1; i <= ItemsAdded; i++)
+            {
+                Preparations = Preparations.OrderBy(s => TopicDates.IndexOf(TopicDates[i])).ToList();
+            }
+
+            foreach (var Topic in Topics)
+            {
+                int index = Topics.IndexOf(Topic);
+                MessageBox.Show($"Compare to the DataGrid{TopicDates[index]}:{Topic}");
+            }
         }
     }
 }
