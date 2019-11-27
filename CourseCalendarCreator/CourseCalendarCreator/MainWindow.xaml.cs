@@ -306,7 +306,10 @@ namespace CourseCalendarCreator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Topics.Clear();
+            TopicDates.Clear();
+            Preparations.Clear();
+            Periods.Clear();
         }
     }
 }
