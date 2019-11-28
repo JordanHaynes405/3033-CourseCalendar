@@ -310,6 +310,7 @@ namespace CourseCalendarCreator
             TopicDates.Clear();
             Preparations.Clear();
             Periods.Clear();
+            dgPreview.Columns.Clear();
         }
     }
 }
