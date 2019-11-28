@@ -157,10 +157,10 @@ namespace CourseCalendarCreator
             CourseTable.Rows.Add(ContentEntry);
             dgPreview.ItemsSource = CourseTable.DefaultView;
 
-            dgPreview.Columns[0].Width = 60;
+            dgPreview.Columns[0].Width = 65;
             dgPreview.Columns[1].Width = 100;
             dgPreview.Columns[2].Width = 50;
-            dgPreview.Columns[3].Width = 240;
+            dgPreview.Columns[3].Width = 235;
         }
 
         private void btnCloseApp_Click(object sender, RoutedEventArgs e)
@@ -211,10 +211,10 @@ namespace CourseCalendarCreator
                 var Whole = CalendarSheet.Cells[$"A1:D{ItemsAdded + 7}"];
                 Whole.Style.WrapText = true;
 
-                CalendarSheet.Column(1).Width = 10;
+                CalendarSheet.Column(1).Width = 11;
                 CalendarSheet.Column(2).Width = 30;
-                CalendarSheet.Column(3).Width = 10;
-                CalendarSheet.Column(4).Width = 37.5;
+                CalendarSheet.Column(3).Width = 11;
+                CalendarSheet.Column(4).Width = 35;
 
                 CalendarSheet.Cells["A1:D1"].Merge = true;
                 CalendarSheet.Cells["A2:D2"].Merge = true;
@@ -224,14 +224,7 @@ namespace CourseCalendarCreator
                 CalendarSheet.Cells["A5:B5"].Merge = true;
                 CalendarSheet.Cells["C5:D5"].Merge = true;
 
-
-                //Attention Here!
-                //using (ExcelRange excelRange = Body)
-                //{
-                //    excelRange.Sort(1, true);
-                //}
-
-                //Excel.SaveAs(ExcelFile);
+                Excel.SaveAs(ExcelFile);
             }
         }
         public void Reorder()
