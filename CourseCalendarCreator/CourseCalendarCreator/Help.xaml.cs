@@ -23,5 +23,11 @@ namespace CourseCalendarCreator
         {
             InitializeComponent();
         }
+
+
+        private void BtnClose_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close(); 
+        }
     }
 }

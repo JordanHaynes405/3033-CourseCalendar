@@ -308,7 +308,9 @@ namespace CourseCalendarCreator
 
         private void BtnHelp_Click(object sender, RoutedEventArgs e)
         {
-            
+            Help HelpWindow = new Help();
+            HelpWindow.Show(); 
+
         }
     }
 }
