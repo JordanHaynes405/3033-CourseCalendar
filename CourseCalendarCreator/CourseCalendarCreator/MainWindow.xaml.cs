@@ -308,7 +308,7 @@ namespace CourseCalendarCreator
 
         private void BtnHelp_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
