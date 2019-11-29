@@ -305,5 +305,10 @@ namespace CourseCalendarCreator
             Periods.Clear();
             dgPreview.Columns.Clear();
         }
+
+        private void BtnHelp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
