@@ -1,0 +1,88 @@
+body {
+    font-family: Verdana, Arial;
+    background-color:silver;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+.Box {
+    background-color: white;
+    color: black;
+    font-size:100%;
+    display: block;
+    width: 800px;
+    height: 600px;
+    padding: 10%;
+    border: 2px solid black;
+    border-radius:30px;
+    box-shadow: -2px 2px grey;
+    margin:10%;
+}
+#IntroText {
+    text-align: center;
+    border: 2px solid grey;
+    width:90%;
+    height:80%;
+    box-shadow: 2px;
+    border-radius: 20px;
+    float: left;
+    margin:5%;
+}
+#IntroImage{
+    content:url(Sample.jpg);
+    background-color:white;
+    height:350px;
+    width:auto;
+    float:left;
+    padding:3%;
+}
+#WhyProject{
+    display:block;
+    font-size:24px;
+    margin:15% 5%;
+}
+.header1{
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    text-decoration:underline;
+}
+#WhyImpress {
+    display: block;
+    font-size: 24px;
+    margin: 15%;
+}
+#DemoImage1 {
+    content: url(Step1.jpg);
+    height: 250px;
+    width: auto;
+    float: left;
+    margin: 10%;
+}
+#DemoImage2 {
+    content: url(Step2.jpg);
+    height: 250px;
+    width: auto;
+    float: left;
+    margin: 10%;
+}
+#DemoImage3 {
+    content: url(Step3.jpg);
+    height: 250px;
+    width: auto;
+    float: left;
+    margin: 10%;
+}
+.header2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: underline;
+    float:left;
+    margin: 5% 42%;
+}
+ul{
+    float:left;
+    margin: 0% 20%;
+}
