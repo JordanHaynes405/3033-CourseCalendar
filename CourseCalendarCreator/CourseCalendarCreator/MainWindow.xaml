@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CourseCalendarCreator"
         mc:Ignorable="d"
         Title="MainWindow" Height="540" Width="1121">
-    <Grid RenderTransformOrigin="0.29,0.949" Background="#FF61C743" Margin="0,0,-2,0">
+    <Grid RenderTransformOrigin="0.29,0.949" Margin="0,0,-2,0" Background="#FFECBA59">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
