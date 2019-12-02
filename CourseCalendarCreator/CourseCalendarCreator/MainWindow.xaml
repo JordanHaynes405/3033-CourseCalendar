@@ -11,7 +11,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Course Calendar Creator" HorizontalAlignment="Left" Height="36" Margin="436,14,0,0" VerticalAlignment="Top" Width="299" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.498,0.459" FontFamily="Microsoft Sans Serif"/>
-        <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="666,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif"/>
+        <DatePicker x:Name="dprEnd" HorizontalAlignment="Left" Margin="666,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,0.477" FontFamily="Microsoft Sans Serif" Width="103"/>
         <DatePicker x:Name="dprStart" HorizontalAlignment="Left" Margin="540,423,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Button x:Name="btnAdd1" Content="Add" HorizontalAlignment="Left" Height="22" Margin="904,474,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif" Click="btnDelete_Click" FontWeight="Bold"/>
         <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Height="22" Margin="512,474,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif" Click="btnExport_Click" FontWeight="Bold"/>
@@ -23,8 +23,8 @@
         <Label Content="Course Code (ex. MIS 3033)" HorizontalAlignment="Left" Margin="542,200,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtCourseCode" HorizontalAlignment="Left" Height="24" Margin="540,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <Label Content="Semester/Term (ex. Fall 2019)" HorizontalAlignment="Left" Height="24" Margin="542,304,0,0" VerticalAlignment="Top" Width="186" FontFamily="Microsoft Sans Serif"/>
-        <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="542,404,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
-        <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="672,405,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="561,404,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
+        <Label Content="End Date" HorizontalAlignment="Left" Height="28" Margin="691,404,0,0" VerticalAlignment="Top" Width="102" FontFamily="Microsoft Sans Serif"/>
         <DataGrid x:Name="dgPreview" HorizontalAlignment="Left" Height="360" Margin="32,88,0,0" VerticalAlignment="Top" Width="458" FontFamily="Microsoft Sans Serif"/>
         <TextBox x:Name="txtDaysofWeek" HorizontalAlignment="Left" Height="24" Margin="540,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" FontFamily="Microsoft Sans Serif"/>
         <Label Content="Days of the Week (M,Tu,W,Th,F,Sa,Su)" HorizontalAlignment="Left" Height="22" Margin="542,356,0,0" VerticalAlignment="Top" Width="236" FontFamily="Microsoft Sans Serif"/>
@@ -36,10 +36,10 @@
         <Label x:Name="lblNumTopicPeriods" Content="Topic Periods to Cover (ex. 3)" HorizontalAlignment="Left" Margin="854,242,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Label x:Name="lblTopicPreparation" Content="Preparation (ex. read chapter 2)" HorizontalAlignment="Left" Margin="854,300,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
         <Label Content="For Holidays and exceptions,&#xA; add them as topics, specify&#xD;&#xA; dates, and add preparations &#xD;&#xA;if desired for homework" HorizontalAlignment="Left" Margin="864,116,0,0" VerticalAlignment="Top" Height="74" Width="166" RenderTransformOrigin="0.545,0.919" FontFamily="Microsoft Sans Serif"/>
-        <DatePicker x:Name="pcrTopicStart" HorizontalAlignment="Left" Margin="900,396,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif"/>
+        <DatePicker x:Name="pcrTopicStart" HorizontalAlignment="Left" Margin="903,390,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Width="103"/>
         <Label x:Name="lblCalendarSetup" Content="Calendar Setup" HorizontalAlignment="Left" Height="36" Margin="542,88,0,0" VerticalAlignment="Top" Width="185" FontFamily="Microsoft Sans Serif" FontSize="22" FontWeight="Bold"/>
         <Button x:Name="btnCloseApp" Content="Close Application" HorizontalAlignment="Left" Margin="38,473,0,0" VerticalAlignment="Top" Width="102" Height="22" FontFamily="Microsoft Sans Serif" Click="btnCloseApp_Click" FontWeight="Bold"/>
-        <Label x:Name="lblTopicStart" Content="Topic Start Date" HorizontalAlignment="Left" Margin="906,370,0,0" VerticalAlignment="Top" Width="94" FontFamily="Microsoft Sans Serif"/>
+        <Label x:Name="lblTopicStart" Content="Topic Start Date" HorizontalAlignment="Left" Margin="906,370,0,0" VerticalAlignment="Top" Width="100" FontFamily="Microsoft Sans Serif"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="309,473,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.862,0.683" Click="Button_Click" FontWeight="Bold" Height="22"/>
         <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Left" Margin="949,32,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="BtnHelp_Click" FontWeight="Bold"/>
     </Grid>
