@@ -75,7 +75,7 @@ namespace CourseCalendarCreator
                 }
             }
 
-            else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null && pcrTopicStart.Text != null)
+            else if (txtTopicName.Text != null && txtNumTopicPeriods.Text != null && txtTopicPreparation.Text != null)
             {
                 MessageBox.Show("You should click the ADD button to save your last entry before exporting!");
             }
